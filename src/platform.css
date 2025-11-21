@@ -1,0 +1,225 @@
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.platform h2 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 105px;
+    font-weight: 800;
+    line-height: 108px;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+.chlidren {
+    max-width: 100%;
+    margin-bottom: -30px;
+}
+
+.chlidren img {
+    max-width: 100%;
+    height: auto;
+}
+
+.platform_info {
+    width: 100%;
+    max-width: 1720px;
+    height: 789px;
+    border-radius: 100px;
+    background: rgba(77, 37, 235, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-column {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+.feature-item::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: rgba(205, 255, 7, 1);
+    border-radius: 100%;
+    margin-right: 19px;
+    flex-shrink: 0;
+}
+
+.platform_info_img {
+    flex: 0 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.platform_info_img img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1200px) {
+    .platform h2 {
+        font-size: 80px;
+        line-height: 85px;
+    }
+
+    .platform_info {
+        height: 650px;
+        padding: 0 60px;
+    }
+
+    .feature-item {
+        font-size: 28px;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .platform h2 {
+        font-size: 60px;
+        line-height: 65px;
+    }
+
+    .platform_info {
+        height: 550px;
+        padding: 0 40px;
+        border-radius: 70px;
+    }
+
+    .feature-item {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .feature-column {
+        padding-left: 40px;
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .platform h2 {
+        font-size: 42px;
+        line-height: 46px;
+    }
+
+    .platform_info {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 30px;
+        border-radius: 50px;
+    }
+
+    .feature-column {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .feature-item {
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+
+    .platform_info_img {
+        width: 100%;
+    }
+
+    .platform_info_img img {
+        max-height: 400px;
+    }
+}
+
+/* Скрытие маскота и центрирование надписей на маленьких экранах */
+@media (max-width: 576px) {
+    .platform h2 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .platform_info {
+        padding: 40px 20px;
+        border-radius: 40px;
+        justify-content: center;
+    }
+
+    .feature-column {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .feature-item {
+        font-size: 18px;
+        line-height: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .feature-item::before {
+        width: 14px;
+        height: 14px;
+        margin-right: 15px;
+    }
+
+    .platform_info_img {
+        display: none; /* Скрываем маскота */
+    }
+}
+
+@media (max-width: 400px) {
+    .platform h2 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .platform_info {
+        padding: 30px 15px;
+        border-radius: 30px;
+    }
+
+    .feature-item {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}

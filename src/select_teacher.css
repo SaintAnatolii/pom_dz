@@ -1,0 +1,120 @@
+.select_teacher {
+    padding-bottom: 90px;
+}
+.select_teacher h1 {
+    font-size: 105px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 65px;
+}
+.select_teacher p {
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 45px;
+}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.category {
+    padding: 18px 44px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(214, 214, 214, 1);
+    border-radius: 13px;
+    cursor: pointer;
+}
+.category.active {
+    background-color: #4d25eb;
+    color: white;
+}
+.teachers-container {
+    margin-top: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.teacher-card {
+    display: flex;
+    gap: 10px;
+}
+.teacher_img {
+    /* image 117 */
+    width: 360px;
+    height: 537px;
+    border-radius: 50px;
+    background: rgba(249, 249, 249, 1);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.teacher_subjects {
+    position: absolute;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    top: 30px;
+    left: 30px;
+}
+.teacher_photo {
+}
+.teacher_info {
+    /* image 123 */
+    width: 430px;
+    height: 536px;
+    border-radius: 50px;
+    background: rgba(237, 235, 255, 1);
+    padding: 52px;
+}
+.teacher_name {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 23px;
+}
+.teacher_univercity {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 59px;
+}
+.teacher_exp {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 59px;
+}
+.teacher_subjects_list {
+    list-style: none;
+    margin-bottom: 43px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.teacher_subjects_list span {
+    font-weight: 900;
+}
+.teacher_subjects_list li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 200;
+}
+.teacher_submit {
+    /* Group 1043 */
+    width: 208px;
+    height: 65px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 37px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}

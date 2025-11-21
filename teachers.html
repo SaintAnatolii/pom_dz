@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <!-- Кодировка и базовые настройки -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO мета-теги -->
+  <title>Помогатор ДЗ - Онлайн помощь с домашними заданиями для школьников 1-11 классов</title>
+  <meta name="description"
+    content="Онлайн помощь с выполнением домашних заданий для школьников 1-11 классов. Подготовка к ЕГЭ, ОГЭ, ВПР. Репетиторы по 13 предметам, 4 языкам и 4 кружкам развития.">
+  <meta name="keywords"
+    content="помощь с домашними заданиями, репетитор онлайн, подготовка к ЕГЭ, подготовка к ОГЭ, выполнение ДЗ, школьные предметы, начальная школа, репетиторы">
+  <meta name="robots" content="index, follow">
+
+  <!-- Канонический URL -->
+  <link rel="canonical" href="https://pomogatordz.ru/">
+
+  <!-- Open Graph мета-теги для социальных сетей -->
+  <meta property="og:title" content="Помогатор ДЗ - Онлайн помощь с домашними заданиями">
+  <meta property="og:description"
+    content="Онлайн помощь с выполнением домашних заданий для школьников 1-11 классов. Подготовка к ЕГЭ, ОГЭ, ВПР. Репетиторы по 13 предметам.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pomogatordz.ru/">
+  <meta property="og:image" content="https://pomogatordz.ru/src/img/og-image.jpg">
+  <meta property="og:site_name" content="Помогатор ДЗ">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Дополнительные SEO мета-теги -->
+  <meta name="author" content="Помогатор ДЗ">
+  <meta name="copyright" content="Помогатор ДЗ">
+  <meta name="theme-color" content="#4361EE">
+
+  <!-- Структурированные данные (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Помогатор ДЗ",
+    "description": "Онлайн помощь с выполнением домашних заданий для школьников 1-11 классов",
+    "url": "https://pomogatordz.ru/",
+    "logo": "https://pomogatordz.ru/src/img/nav/LogoPomogator.png",
+    "telephone": "+7-958-111-68-55",
+    "email": "da@pomogatordz.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU"
+    },
+    "areaServed": "RU",
+    "serviceType": "Online tutoring",
+    "educationalLevel": "Primary education, Secondary education"
+  }
+  </script>
+
+  <!-- Фавиконы и иконки -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4361ee">
+  <meta name="msapplication-TileColor" content="#4361ee">
+  <meta name="theme-color" content="#4361ee">
+
+  <!-- Предзагрузка критических ресурсов -->
+  <link rel="preload" href="src/style.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" as="script">
+
+  <!-- Подключение стилей -->
+
+  <!-- CSS modules -->
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/header-menu.css">
+  <link rel="stylesheet" href="src/footer.css">
+  <link rel="stylesheet" href="src/teachers_banner.css">
+  <link rel="stylesheet" href="src/select_teacher.css">
+  <link rel="stylesheet" href="src/why.css">
+  <link rel="stylesheet" href="src/first_class.css">
+  <link rel="stylesheet" href="src/platform.css">
+
+  <script src="./src/modules/menu.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="main_page">
+    <div class="header-container">
+      <a href="#" class="header_logo">
+        <img src="src/img/nav/LogoPomogator.png" alt="logo" class="logo_img_b">
+        <img src="src/img/nav/LogoPomogator_wh.png" alt="logo" class="logo_img_w">
+      </a>
+
+      <nav>
+        <a href="#" class="nav-item" id="menuToggle">
+          Направления
+          <span class="dropdown-arrow"></span>
+        </a>
+        <a href="#" class="nav-item">Учителя</a>
+        <a href="#" class="nav-item">О нас</a>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="#" class="cta-button">Записаться на 1 урок</a>
+
+        <div class="burger" id="burger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mega Menu -->
+  <div class="mega-menu" id="megaMenu">
+    <div class="mega-menu-grid">
+
+
+      <div class="menu-column">
+        <h3>Подготовка, начальная школа</h3>
+        <div class="menu-links">
+          <a href="school_preparation.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/подготовка_к_школе.svg" alt="подготовка_к_школе"
+                data-active_image="подготовка_к_школе.svg">
+            </span>
+            Подготовка к школе
+          </a>
+          <a href="elementary_school.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/начальная_школа.svg" alt="начальная_школа">
+            </span>
+            Начальная школа
+          </a>
+        </div>
+
+
+        <div class="menu-section" style="margin-top: 32px;">
+          <a href="">
+
+            <div class="menu-section-title">Олимпиады</div>
+          </a>
+        </div>
+        <div class="menu-section">
+          <a href="">
+
+            <div class="menu-section-title">ОГЭ</div>
+          </a>
+        </div>
+        <div class="menu-section">
+          <a href="">
+
+            <div class="menu-section-title">ЕГЭ</div>
+          </a>
+        </div>
+        <div class="menu-section">
+          <a href="">
+
+            <div class="menu-section-title">ВПР</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-column">
+        <h3>Гуманитарные науки</h3>
+        <div class="menu-links">
+          <a href="russian.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/русский.svg" alt="русский язык">
+            </span>
+            Русский язык
+          </a>
+          <a href="literature.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/литература.svg" alt="литература">
+            </span>
+            Литература
+          </a>
+          <a href="history.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/история.svg" alt="история">
+            </span>
+            История
+          </a>
+          <a href="social_studies.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/обществознание.svg" alt="обществознание">
+            </span>
+            Обществознание
+          </a>
+          <a href="environmental_science.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/окружающий_мир.svg" alt="Окружающий мир">
+            </span>
+            Окружающий мир
+          </a>
+          <a href="biology.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/биологоия.svg" alt="биологоия">
+            </span>
+            Биология
+          </a>
+          <a href="geography.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/география.svg" alt="География">
+            </span>
+            География
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-column">
+        <h3>Точные науки</h3>
+        <div class="menu-links">
+          <a href="mathematics.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/математика.svg" alt="математика">
+            </span>
+            Математика
+          </a>
+          <a href="physics.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/физика.svg" alt="физика">
+            </span>
+            Физика
+          </a>
+          <a href="chemistry.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/химия.svg" alt="химия">
+            </span>
+            Химия
+          </a>
+          <a href="computer_science.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/информатика.svg" alt="информатика">
+            </span>
+            Информатика
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-column">
+        <h3>Языки</h3>
+        <div class="menu-links">
+          <a href="english.html" class="menu-link">
+            <div class="menu-icon">
+
+              <img src="src/img/classes/английский.svg" alt="английский язык">
+            </div>
+            Английский
+          </a>
+          <a href="german.html" class="menu-link">
+            <div class="menu-icon">
+
+              <img src="src/img/classes/немецкий.svg" alt="немецкий язык">
+            </div>
+            Немецкий
+          </a>
+          <a href="french.html" class="menu-link">
+            <div class="menu-icon">
+
+              <img src="src/img/classes/французский.svg" alt="французский язык">
+            </div>
+            Французский
+          </a>
+          <a href="spanish.html" class="menu-link">
+            <div class="menu-icon">
+
+              <img src="src/img/classes/испанский.svg" alt="испанский язык">
+            </div>
+            Испанский
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-column">
+        <h3>Клубы</h3>
+        <div class="menu-links">
+          <a href="chess.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/шахматы.svg" alt="шахматы">
+            </span>
+            Шахматы
+          </a>
+          <a href="music.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/музыка.svg" alt="музыка">
+            </span>
+            Музыка
+          </a>
+          <a href="programming.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/программирование.svg" alt="программирование">
+            </span>
+            Программирование
+          </a>
+          <a href="vocal.html" class="menu-link">
+            <span class="menu-icon">
+              <img src="src/img/classes/вокал.svg" alt="вокал">
+            </span>
+            Вокал
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-column sub-menu">
+
+        <div class="menu-section " style="margin-top: 32px;">
+          <a href="">
+            <div class="menu-section-title">Учителя</div>
+          </a>
+        </div>
+        <div class="menu-section">
+          <a href="">
+            <div class="menu-section-title">О нас</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <section class="teachers_banner">
+        <div class="container">
+          <div class="icons-row">
+            <img src="./src/img/classes/active_подготовка_к_школе.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_начальная_школа.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_литература.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_история.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_обществознание.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_русский.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_биологоия.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_окружающий_мир.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_география.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_математика.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_физика.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_химия.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_информатика.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_английский.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_немецкий.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_французский.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_испанский.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_музыка.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_вокал.svg" alt="Subject icon" />
+            <img src="./src/img/classes/active_шахматы.svg" alt="Subject icon" />
+          </div>
+
+          <div class="content-wrapper">
+            <div class="text-content">
+              <h1 class="main-title">
+                <span class="highlight">Профессиональные репетиторы</span> для вашего ребенка
+              </h1>
+              <p class="subtitle">
+                Запишитесь на бесплатную консультацию и узнайте, как мы можем помочь!
+              </p>
+            </div>
+
+            <div class="image-content">
+              <img src="https://c.animaapp.com/mi8qzve4p4OOsD/img/image-122.png" alt="Teacher illustration" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="select_teacher">
+        <h2>Репетиторы Помогатора</h2>
+
+        <p style="text-align: center; margin-bottom: 20px;">Выберите категорию или посмотрите всех учителей</p>
+
+        <div class="categories">
+          <div class="category active">Подготовка, начальные классы</div>
+          <div class="category">Гуманитарные науки</div>
+          <div class="category">Точные науки</div>
+          <div class="category">Языки</div>
+          <div class="category">Клубы</div>
+          <div class="category">ОГЭ</div>
+          <div class="category">ЕГЭ</div>
+          <div class="category">Все репетиторы</div>
+        </div>
+
+        <div class="teachers-container">\
+          <div class="teacher-card">
+
+            <div class="teacher_img">
+              <ul class="teacher_subjects">
+                <li>
+                  <img src="./src/img/classes/active_математика.svg" alt="математика">
+                </li>
+                <li>
+                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
+                </li>
+              </ul>
+
+              <div class="teacher_photo">
+                <img src="./src/img/image_122.png" alt="фото учителя">
+              </div>
+            </div>
+
+            <div class="teacher_info">
+              <div class="teacher_name">Анастасия</div>
+              <div class="teacher_univercity">Московский государственный педагогический университет </div>
+              <div class="teacher_exp">6 лет репетиторской деятельности</div>
+              <ul class="teacher_subjects_list">
+                <span>Предметы:</span>
+                <li>- математика</li>
+                <li>- информатика</li>
+              </ul>
+              <button class="teacher_submit">Записаться</button>
+            </div>
+
+          </div>
+
+          <div class="teacher-card">
+
+            <div class="teacher_img">
+              <ul class="teacher_subjects">
+                <li>
+                  <img src="./src/img/classes/active_математика.svg" alt="математика">
+                </li>
+                <li>
+                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
+                </li>
+              </ul>
+
+              <div class="teacher_photo">
+                <img src="./src/img/image_122.png" alt="фото учителя">
+              </div>
+            </div>
+
+            <div class="teacher_info">
+              <div class="teacher_name">Анастасия</div>
+              <div class="teacher_univercity">Московский государственный педагогический университет </div>
+              <div class="teacher_exp">6 лет репетиторской деятельности</div>
+              <ul class="teacher_subjects_list">
+                <span>Предметы:</span>
+                <li>- математика</li>
+                <li>- информатика</li>
+              </ul>
+              <button class="teacher_submit">Записаться</button>
+            </div>
+
+          </div>
+
+          <div class="teacher-card">
+
+            <div class="teacher_img">
+              <ul class="teacher_subjects">
+                <li>
+                  <img src="./src/img/classes/active_математика.svg" alt="математика">
+                </li>
+                <li>
+                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
+                </li>
+              </ul>
+
+              <div class="teacher_photo">
+                <img src="./src/img/image_122.png" alt="фото учителя">
+              </div>
+            </div>
+
+            <div class="teacher_info">
+              <div class="teacher_name">Анастасия</div>
+              <div class="teacher_univercity">Московский государственный педагогический университет </div>
+              <div class="teacher_exp">6 лет репетиторской деятельности</div>
+              <ul class="teacher_subjects_list">
+                <span>Предметы:</span>
+                <li>- математика</li>
+                <li>- информатика</li>
+              </ul>
+              <button class="teacher_submit">Записаться</button>
+            </div>
+
+          </div>
+
+          <div class="teacher-card">
+
+            <div class="teacher_img">
+              <ul class="teacher_subjects">
+                <li>
+                  <img src="./src/img/classes/active_математика.svg" alt="математика">
+                </li>
+                <li>
+                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
+                </li>
+              </ul>
+
+              <div class="teacher_photo">
+                <img src="./src/img/image_122.png" alt="фото учителя">
+              </div>
+            </div>
+
+            <div class="teacher_info">
+              <div class="teacher_name">Анастасия</div>
+              <div class="teacher_univercity">Московский государственный педагогический университет </div>
+              <div class="teacher_exp">6 лет репетиторской деятельности</div>
+              <ul class="teacher_subjects_list">
+                <span>Предметы:</span>
+                <li>- математика</li>
+                <li>- информатика</li>
+              </ul>
+              <button class="teacher_submit">Записаться</button>
+            </div>
+
+          </div>
+
+        </div>
+      </section> -->
+
+      <section class="why_select">
+        <h2>Почему стоит выбрать нас?</h2>
+
+        <div class="why_wrapper">
+          <div class="why_card">
+            <div class="text_content">
+              <div class="why_card_title">Профессионализм</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/1.png" alt="theme icon">
+            </div>
+          </div>
+
+          <div class="why_card">
+            <div class="text_content">
+              <div class="why_card_title">Индивидуальный подход</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/2.png" alt="theme icon">
+            </div>
+          </div>
+
+          <div class="why_card">
+            <div class="text_content">
+              <div class="why_card_title">Гибкий график</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/3.png" alt="theme icon">
+            </div>
+          </div>
+
+          <div class="why_card">
+            <div class="text_content">
+              <div class="why_card_title">Доступные цены</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/4.png" alt="theme icon">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="first_class">
+        <h2>Первое занятие - <span>бесплатно!</span></h2>
+
+        <div class="first_class_top">
+
+          <div class="rect_card">
+            <div class="rect_image">
+              <img src="./src/img/first_class/1.png" alt="шестеренка">
+            </div>
+            <div class="rect_info">
+              <div class="rect_title">Процесс</div>
+              <div class="rect_text">Тут интересный текст описывающий
+                данный раздел Тут интересный текст описывающий данный раздел. Тут интересный текст описывающий
+                данный раздел Тут интересный текст</div>
+            </div>
+          </div>
+
+          <div class="rect_card">
+            <div class="rect_image">
+              <img src="./src/img/first_class/2.png" alt="шестеренка">
+            </div>
+            <div class="rect_info">
+              <div class="rect_title">Приемущества</div>
+              <div class="rect_text">Тут интересный текст описывающий
+                данный раздел Тут интересный текст описывающий данный раздел. Тут интересный текст описывающий
+                данный раздел Тут интересный текст</div>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 class="middle_title">Попробуйте прямо сейчас</h3>
+        <h3 class="middle_subtitle">Оставьте заявку на бесплатное занятие</h3>
+
+
+        <div class="first_bottom">
+
+          <form class="form-container">
+            <div class="form-group">
+              <input type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Ваш номер" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Ваш email" required>
+            </div>
+            <button type="submit" class="submit-button">Оставить заявку</button>
+            <div class="checkbox-container">
+              <input type="checkbox" id="privacy" required>
+              <label for="privacy">Я согласен (на) на обработку персональных данных</label>
+            </div>
+          </form>
+
+          <div class="first_class_img">
+            <img src="./src/img/first_class/3.png" alt="главный герой">
+          </div>
+
+        </div>
+      </section>
+
+      <section class="why_select">
+        <h2>Этапы занятий:</h2>
+
+        <div class="why_wrapper">
+          <div class="why_card why_card_reverse">
+            <div class="text_content">
+              <div class="why_card_title">Оценка знаний</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/5.png" alt="theme icon">
+            </div>
+          </div>
+
+          <div class="why_card why_card_reverse">
+            <div class="text_content">
+              <div class="why_card_title">Составление программы</div>
+              <div class="why_card_subtitle">подзаголовок</div>
+              <div class="why_card_content">Тут интересный текст описывающий данный раздел Тут интересный текст
+                описывающий данный раздел.</div>
+            </div>
+            <div class="why_img">
+              <img src="./src/img/why/6.png" alt="theme icon">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="platform">
+        <div class="logo">
+          <img src="./src/img/platform/logo.png" alt="логотип">
+        </div>
+        <h2>Что вы можете делать на нашей платформе</h2>
+
+        <div class="chlidren">
+          <img src="./src/img/platform/1.png" alt="дети">
+        </div>
+
+        <div class="platform_info">
+          <div class="feature-column">
+            <div class="feature-item">Общение с репетиторами</div>
+            <div class="feature-item">Доступ к материалам</div>
+            <div class="feature-item">Помощь в социальных сетях</div>
+            <div class="feature-item">Общение с репетиторами</div>
+            <div class="feature-item">Доступ к материалам</div>
+            <div class="feature-item">Помощь в социальных сетях</div>
+          </div>
+          <div class="platform_info_img">
+            <img src="./src/img/platform/3.png" alt="маскот">
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+  <footer style="background: linear-gradient(135deg, #6b46ff 0%, #5b3fe8 100%);">
+    <img class="footer_babana" src="src/img/footer/banana.svg" alt="узор">
+    <div class="footer-container">
+      <div class="footer-main">
+
+
+
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="src/img/footer/logo.png" alt="">
+          </div>
+          <p class="brand-description">
+            Сообщество репетиторов<br>"Помогатор"
+          </p>
+          <p class="brand-tagline">
+            Помогатор. Онлайн-сервис помощи с выполнением домашнего задания для детей 1-11 класса.
+          </p>
+        </div>
+
+
+        <div class="footer-column">
+          <h3><a href="#search">Все предметы</a></h3>
+          <ul class="footer-links">
+            <li><a href="school_preparation.html">Подготовка к школе</a></li>
+            <li><a href="elementary_school.html">Начальная школа</a></li>
+            <li><a href="#humanitarian">Гуманитарные науки</a></li>
+            <li><a href="#exact">Точные науки</a></li>
+            <li><a href="#languages">Языки</a></li>
+            <li><a href="#clubs">Клубы</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3><a href="#exams">ЕГЭ и ОГЭ</a></h3>
+          <ul class="footer-links">
+            <li><a href="mathematics.html">Математика</a></li>
+            <li><a href="russian.html">Русский язык</a></li>
+            <li><a href="biology.html">Биология</a></li>
+            <li><a href="history.html">История</a></li>
+            <li><a href="physics.html">Физика</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3><a href="#teachers">Учителя</a></h3>
+          <ul class="footer-links">
+            <li><a href="#elementary_teachers">Для начальной школы</a></li>
+            <li><a href="#russian_teachers">По русскому и литературе</a></li>
+            <li><a href="#math_teachers">По математике и геометрии</a></li>
+            <li><a href="#language_teachers">По иностранным языкам</a></li>
+            <li><a href="#development_teachers">По дополнительному развитию</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Контакты</h3>
+          <div class="contact-info">
+            <a href="mailto:da@pomogatordz.ru" class="contact-email">da@pomogatordz.ru</a>
+            <a href="tel:+79581116855" class="contact-phone">+7 (958) 111-68-55</a>
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="VK">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.15 14.63h-1.39c-.68 0-.88-.54-2.1-1.76-.99-.99-1.42-1.13-1.67-1.13-.34 0-.44.1-.44.58v1.61c0 .43-.14.69-1.27.69-1.87 0-3.94-1.13-5.4-3.24-2.19-3.07-2.79-5.39-2.79-5.86 0-.25.1-.48.58-.48h1.39c.43 0 .59.2.76.66.84 2.43 2.24 4.56 2.82 4.56.22 0 .32-.1.32-.65v-2.54c-.07-1.28-.75-1.39-.75-1.85 0-.2.17-.4.43-.4h2.18c.36 0 .49.19.49.61v3.44c0 .36.16.49.26.49.22 0 .4-.13.81-.54 1.24-1.39 2.13-3.54 2.13-3.54.12-.25.31-.48.78-.48h1.39c.51 0 .62.26.51.61-.17.86-2.03 3.67-2.03 3.67-.18.3-.25.43 0 .76.18.25.78.76 1.18 1.22.73.82 1.29 1.5 1.44 1.98.15.47-.08.71-.59.71z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Telegram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="brand-tagline">
+          Помогатор. Онлайн-сервис помощи с выполнением домашнего задания для детей 1-11 класса.
+        </p>
+        <div class="copyright">2025</div>
+        <div class="footer-legal">
+          <a href="#">Договор оферты</a>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <script>
+    const select_teacher = () => {
+      const tabs = document.querySelectorAll('.category')
+
+      const clearAllTabs = () => {
+        tabs.forEach((tab) => tab.classList.remove('active'))
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          clearAllTabs()
+          tab.classList.add('active')
+        })
+      })
+    }
+
+    select_teacher()
+  </script>
+
+</body>
+
+</html>
