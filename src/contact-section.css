@@ -1,0 +1,257 @@
+.contact-section {
+    width: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+    border-radius: 60px;
+    padding: 49px 150px 0 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.contact_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.form-container {
+    flex: 1;
+    max-width: 608px;
+    z-index: 2;
+    padding-bottom: 80px;
+}
+
+.section-title-2 {
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.section-subtitle-2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-weight: 400;
+    opacity: 0.95;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 22px 30px;
+    border: none;
+    border-radius: 100px;
+    font-size: 18px;
+    background: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 22px 30px;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 700;
+    background: #d4ff00;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #c0e600;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.checkbox-label a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.main-image {
+    max-width: 50%;
+    position: relative;
+    bottom: -10px;
+    right: -110px;
+}
+.main-image img {
+    margin-top: -100px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.decorative-icon {
+    position: absolute;
+    font-size: 60px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-atom {
+    top: 10%;
+    left: 0px;
+    animation-delay: 0s;
+}
+
+.icon-microscope {
+    top: 2%;
+    right: 0;
+    animation-delay: 1s;
+}
+
+.icon-letters {
+    bottom: 5%;
+    right: 0%;
+    animation-delay: 0.5s;
+}
+
+.icon-hebrew {
+    bottom: 0px;
+    left: 0%;
+    animation-delay: 1.5s;
+}
+.icon-hebrew {
+    width: 70px;
+    bottom: 0px;
+    right: 140px;
+    animation-delay: 1.5s;
+}
+
+.form-image-mobile {
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width: 1400px) {
+    .form-container {
+        max-width: 508px;
+    }
+}
+@media (max-width: 1280px) {
+    .form-container {
+        max-width: 508px;
+        padding-bottom: 10px;
+    }
+}
+/* Laptop */
+@media screen and (max-width: 1024px) {
+    .contact-section {
+        height: 800px;
+        padding: 15px 15px 0 15px;
+        border-radius: 30px;
+    }
+    .section-title-2 {
+        font-size: 44px;
+        margin-bottom: 0px;
+    }
+
+    .section-subtitle-2 {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+    .contact_wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact_wrapper .main-image {
+        margin: 0 auto;
+    }
+    .main-image {
+        display: none;
+    }
+    .form-image-mobile {
+        display: block;
+    }
+    .icon-atom {
+        left: -71px;
+    }
+    .icon-hebrew {
+        left: -16%;
+    }
+    .icon-microscope {
+        top: -8%;
+        right: -56px;
+    }
+    .icon-letters {
+        right: -29%;
+    }
+    .form-container .form-group input {
+        height: 50px;
+    }
+    .form-container button {
+        height: 50px;
+        padding: 0;
+    }
+    .form-image-mobile img {
+        width: 90%;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .checkbox-label {
+        font-size: 10px;
+    }
+    .form-group {
+        margin-bottom: 8px;
+    }
+    .section-title-2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        line-height: 30px;
+    }
+
+    .section-subtitle-2 {
+        font-size: 16px;
+        margin-bottom: 35px;
+    }
+}

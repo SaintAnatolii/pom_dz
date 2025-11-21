@@ -1,0 +1,218 @@
+.contact_preparation_for_school {
+    background: #ffd46f;
+}
+.contact_start_school {
+    background: #ff9e4a;
+}
+.contact_russian {
+    background: #7b0002;
+}
+.contact_literature {
+    background: #dd9b00;
+}
+.contact_history {
+    background: #8d6e63;
+}
+.contact_social_science {
+    background: #ff6b6b;
+}
+.contact_world_around {
+    background: #4caf50;
+}
+.contact_biology {
+    background: #80c430;
+}
+.contact_geography {
+    background: #60b5f1;
+}
+.contact_math {
+    background: #1b42f9;
+}
+.contact_physics {
+    background: #4c39b2;
+}
+.contact_chemistry {
+    background: #7209b7;
+}
+.contact_informatics {
+    background: #000;
+}
+.contact_english,
+.contact_spanish {
+    background: #eb1513;
+}
+.contact_german {
+    background: #ffcc00;
+}
+.contact_french {
+    background: #004490;
+}
+.contact_chess {
+    background: #463428;
+}
+.contact_voice {
+    background: #ff92c9;
+}
+.contact_music {
+    background: #b18fe1;
+}
+
+.submit_btn_black {
+    background-color: #000000 !important;
+    color: rgb(255, 255, 255) !important;
+}
+.submit_btn_music {
+    background-color: #ff2e70 !important;
+    color: rgb(255, 255, 255) !important;
+}
+.submit_btn_pink {
+    background-color: #000000 !important;
+    color: rgb(255, 255, 255) !important;
+}
+.submit_btn_green {
+    background-color: #cdff07 !important;
+    color: black !important;
+}
+.submit_btn_spanish {
+    background-color: #ffcc00 !important;
+    color: black !important;
+}
+.submit_btn_yellow {
+    background-color: #ffea28 !important;
+    color: black !important;
+}
+.submit_btn_purple {
+    background-color: #7e26e0 !important;
+}
+.submit_btn_literature {
+    background-color: #794f2e !important;
+}
+.submit_btn_history {
+    background-color: #592a19 !important;
+}
+.submit_btn_russian {
+    background-color: #fd6466 !important;
+}
+
+.white_text {
+    color: white !important;
+}
+
+.contact_form_section {
+    /* Rectangle 414 */
+    max-width: 1720px;
+    height: 900px;
+    border-radius: 80px;
+    padding: 50px 118px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact_form_section h2 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 105px;
+    font-weight: 800;
+    line-height: 1.08;
+    text-align: center;
+    margin-bottom: 11px;
+}
+.contact_form_section p {
+    color: rgba(32, 32, 32, 1);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 0.5;
+    text-align: left;
+}
+.contact_form_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.contact_form_main_image {
+    flex: 1;
+    width: 100%;
+}
+.contact_form_main_image.mobile {
+    display: none;
+}
+.contact_form_main_image img {
+    display: block;
+    margin: 0 auto;
+    max-height: 656px;
+}
+
+@media screen and (max-width: 1720px) {
+    .contact_form_main_image img {
+        width: 700px;
+    }
+}
+@media screen and (max-width: 1546px) {
+    .contact_form_section {
+        padding: 68px 81px;
+        height: 750px;
+    }
+    .contact_form_main_image img {
+        width: 600px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .contact_form_section h2 {
+        font-size: 64px;
+        margin-bottom: 11px;
+    }
+    .contact_form_section p {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .contact_form_section {
+        padding: 68px 81px;
+        height: 600px;
+    }
+    .contact_form_main_image img {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .contact_form_section {
+        padding: 68px 81px;
+        height: 1000px;
+    }
+    .contact_form_wrapper {
+        flex-direction: column;
+    }
+    .contact_form_section p {
+        line-height: 1;
+        text-align: center;
+    }
+    .contact_form_main_image {
+        display: none;
+    }
+    .contact_form_main_image.mobile {
+        display: flex;
+    }
+}
+@media screen and (max-width: 768px) {
+    .contact_form_section {
+        padding: 60px 20px;
+        border-radius: 30px;
+        height: 850px;
+    }
+    .contact_form_section h2 {
+        font-size: 32px;
+    }
+    .contact_form_section p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .contact_form_main_image img {
+        width: 316px;
+    }
+}
+@media screen and (max-width: 375px) {
+}

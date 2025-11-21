@@ -1,0 +1,247 @@
+/* !how */
+
+.linguistic-section {
+    margin-bottom: 91px;
+}
+.linguistic-heading {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 55px;
+}
+.linguistic-heading h1 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 16px;
+}
+.linguistic-heading p {
+    color: rgba(32, 32, 32, 1);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 34px;
+}
+.linguistic {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    background: rgba(251, 251, 251, 1);
+    border-radius: 40px;
+    padding: 50px 0px 50px 60px;
+    display: flex;
+    position: relative;
+    width: 46%;
+}
+.card_info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.card-book {
+    /* width: 30%; */
+    width: 30%;
+}
+.card-book img {
+    width: 230px;
+    margin: 0;
+    text-align: center;
+}
+.card-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.card-title_lang {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 57px;
+    gap: 20px;
+}
+.card-title_lang_name {
+    width: 100%;
+    max-width: 440px;
+}
+.ard-title_lang_flag {
+    width: 20%;
+    max-width: 39px;
+}
+.card-title img {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.card-title img:nth-child(2) {
+    margin-left: 10px;
+}
+
+.card-book_hobbyes {
+    width: 30%;
+    max-width: 250px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    height: 300px;
+}
+
+.card-text {
+    color: rgba(32, 32, 32, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 51px;
+}
+.card_links {
+    display: flex;
+    align-items: center;
+}
+.card-age {
+    color: var(--Текст, rgba(32, 32, 32, 1));
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+.card-btn-more {
+    /* But */
+    width: 208px;
+    height: 65px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 37px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 45px;
+}
+
+@media screen and (max-width: 1440px) {
+    .linguistic {
+        gap: 10px;
+    }
+    .card {
+        padding: 50px 40px;
+    }
+    .card-text {
+        margin-bottom: 31px;
+    }
+    .card-title {
+        margin-bottom: 10px;
+    }
+    .card-book {
+        width: 125px;
+    }
+    .card-book img {
+        width: 175px;
+        margin: 50px 0px -25px 10px;
+    }
+    .card-btn-more {
+        width: 220px;
+        height: 50px;
+        font-size: 15px;
+        line-height: 42px;
+        margin-right: 25px;
+    }
+}
+/* Laptop */
+@media screen and (max-width: 1024px) {
+    .linguistic-section {
+        margin-bottom: 41px;
+    }
+    .card {
+        width: 96%;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    .card-book img {
+        margin: 0px 0px 0px 30px;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .linguistic-heading {
+        margin-bottom: 35px;
+    }
+    .linguistic-heading h1 {
+        font-size: 45px;
+        line-height: 56px;
+        margin-bottom: 16px;
+    }
+    .linguistic-heading p {
+        font-size: 32px;
+    }
+    .card {
+        width: 96%;
+        padding: 20px 25px;
+        flex-direction: row-reverse;
+    }
+    .card-book img {
+        width: 150px;
+        margin-left: -30px;
+    }
+    .card-title_lang {
+        height: 35px;
+        margin-bottom: 10px;
+    }
+    .card-title_lang_name {
+        width: 200px;
+    }
+    .card-title_lang_flag {
+        width: 24px;
+    }
+}
+/* Mobile L */
+@media screen and (max-width: 500px) {
+    .linguistic-heading {
+        margin-bottom: 35px;
+    }
+    .linguistic-heading h1 {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 16px;
+        padding: 0 20px;
+    }
+    .linguistic-heading p {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0 20px;
+    }
+    .card-age {
+        font-size: 10px;
+    }
+    .card-text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .card-btn-more {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .card-book img {
+        width: 120px;
+        margin-left: -44px;
+    }
+    .card-title_lang {
+        gap: 5px;
+    }
+    .card-title_lang_name {
+        width: 146px;
+    }
+    .card-title_lang {
+        margin-bottom: 0px;
+    }
+    .card-text {
+        margin-bottom: 15px;
+    }
+}

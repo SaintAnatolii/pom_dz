@@ -1,0 +1,570 @@
+.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 1228px;
+    border-radius: 100px;
+    background: rgba(249, 249, 249, 1);
+    padding: 88px 200px 72px 200px;
+    margin-top: 78px;
+    box-sizing: border-box;
+}
+
+.steps h2 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 105px;
+    font-weight: 800;
+    line-height: 108px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.steps-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 69px;
+    width: 100%;
+    max-width: 1327px;
+}
+
+.step-tab {
+    font-size: 48px;
+    font-weight: normal;
+    padding: 38px 85px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+    text-align: center;
+    flex: 1;
+}
+
+.step-tab.active {
+    background: rgba(249, 249, 249, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    font-weight: bold;
+}
+
+.steps-container {
+    position: relative;
+    width: 100%;
+    max-width: 1327px;
+    height: 667px;
+    margin: 0 auto;
+}
+
+.step_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background: rgba(249, 249, 249, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 114px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.5s ease;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.step_card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 10;
+}
+
+.step_card_img {
+    width: 374px;
+    flex-shrink: 0;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 435px;
+}
+
+.step_card_img svg {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.step_card_text {
+    flex: 1;
+}
+
+.step_card_text h3 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.step_card_text h4 {
+    color: rgba(32, 32, 32, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.step_card_text p {
+    color: rgba(32, 32, 32, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Анимация перекладывания карты */
+@keyframes cardDeal {
+    0% {
+        transform: translateY(100px) rotate(-5deg) scale(0.9);
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(0deg) scale(1.02);
+        opacity: 0.8;
+        z-index: 10;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+.step_card.dealing {
+    animation: cardDeal 0.6s ease-out forwards;
+}
+
+/* Адаптивность для больших экранов */
+@media (max-width: 1920px) {
+    .steps {
+        padding: 88px 150px 72px 150px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .steps {
+        padding: 88px 100px 72px 100px;
+        border-radius: 80px;
+    }
+
+    .steps h2 {
+        font-size: 90px;
+        line-height: 92px;
+        margin-bottom: 70px;
+    }
+
+    .step-tab {
+        font-size: 42px;
+        padding: 32px 70px;
+    }
+
+    .step_card {
+        padding: 90px;
+    }
+
+    .step_card_img {
+        width: 320px;
+        height: 380px;
+    }
+
+    .step_card_text h3 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .steps {
+        padding: 70px 80px 60px 80px;
+        border-radius: 70px;
+        margin-top: 60px;
+        min-height: 1000px;
+    }
+
+    .steps h2 {
+        font-size: 75px;
+        line-height: 78px;
+        margin-bottom: 60px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 50px;
+        gap: 12px;
+    }
+
+    .step-tab {
+        font-size: 36px;
+        padding: 28px 50px;
+        border-radius: 40px;
+    }
+
+    .steps-container {
+        height: 580px;
+    }
+
+    .step_card {
+        padding: 70px;
+        border-radius: 20px;
+    }
+
+    .step_card_img {
+        width: 280px;
+        height: 350px;
+        margin-right: 35px;
+    }
+
+    .step_card_text h3 {
+        font-size: 36px;
+    }
+
+    .step_card_text h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .step_card_text p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .steps {
+        padding: 60px 50px 50px 50px;
+        border-radius: 60px;
+        min-height: 900px;
+    }
+
+    .steps h2 {
+        font-size: 65px;
+        line-height: 68px;
+        margin-bottom: 50px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 40px;
+        gap: 10px;
+    }
+
+    .step-tab {
+        font-size: 32px;
+        padding: 24px 40px;
+        border-radius: 35px;
+    }
+
+    .steps-container {
+        height: 500px;
+    }
+
+    .step_card {
+        padding: 60px;
+    }
+
+    .step_card_img {
+        width: 240px;
+        height: 320px;
+        margin-right: 30px;
+    }
+
+    .step_card_text h3 {
+        font-size: 32px;
+    }
+
+    .step_card_text h4 {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .step_card_text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .steps {
+        padding: 50px 40px 40px 40px;
+        border-radius: 50px;
+        min-height: 800px;
+        margin-top: 50px;
+    }
+
+    .steps h2 {
+        font-size: 55px;
+        line-height: 58px;
+        margin-bottom: 40px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 35px;
+        gap: 8px;
+    }
+
+    .step-tab {
+        font-size: 28px;
+        padding: 20px 30px;
+        border-radius: 30px;
+    }
+
+    .steps-container {
+        height: 450px;
+    }
+
+    .step_card {
+        padding: 50px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .step_card_img {
+        width: 200px;
+        height: 280px;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .step_card_text h3 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .step_card_text h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .step_card_text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps {
+        padding: 40px 30px 30px 30px;
+        border-radius: 40px;
+        min-height: 700px;
+        margin-top: 40px;
+    }
+
+    .steps h2 {
+        font-size: 45px;
+        line-height: 48px;
+        margin-bottom: 35px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 30px;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .step-tab {
+        font-size: 24px;
+        padding: 18px 25px;
+        border-radius: 25px;
+        flex: 1 1 calc(50% - 6px);
+        min-width: calc(50% - 6px);
+        margin-bottom: 6px;
+    }
+
+    .steps-container {
+        height: 400px;
+    }
+
+    .step_card {
+        padding: 40px 30px;
+    }
+
+    .step_card_img {
+        width: 160px;
+        height: 240px;
+        margin-bottom: 25px;
+    }
+
+    .step_card_text h3 {
+        font-size: 24px;
+    }
+
+    .step_card_text h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .step_card_text p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .steps {
+        padding: 30px 20px 20px 20px;
+        border-radius: 30px;
+        min-height: 600px;
+        margin-top: 30px;
+    }
+
+    .steps h2 {
+        font-size: 35px;
+        line-height: 38px;
+        margin-bottom: 25px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 25px;
+        gap: 5px;
+    }
+
+    .step-tab {
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 20px;
+        flex: 1 1 calc(50% - 5px);
+        min-width: calc(50% - 5px);
+    }
+
+    .steps-container {
+        height: 350px;
+    }
+
+    .step_card {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .step_card_img {
+        width: 120px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .step_card_text h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .step_card_text h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .step_card_text p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps {
+        padding: 25px 15px 15px 15px;
+        border-radius: 25px;
+        min-height: 550px;
+    }
+
+    .steps h2 {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+
+    .steps-tabs {
+        margin-bottom: 20px;
+        gap: 4px;
+    }
+
+    .step-tab {
+        font-size: 16px;
+        padding: 12px 15px;
+        border-radius: 15px;
+        flex: 1 1 calc(50% - 4px);
+        min-width: calc(50% - 4px);
+    }
+
+    .steps-container {
+        height: 300px;
+    }
+
+    .step_card {
+        padding: 25px 15px;
+    }
+
+    .step_card_img {
+        width: 100px;
+        height: 160px;
+        margin-bottom: 15px;
+    }
+
+    .step_card_text h3 {
+        font-size: 18px;
+    }
+
+    .step_card_text h4 {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .step_card_text p {
+        font-size: 11px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+    .steps {
+        padding: 20px 10px 10px 10px;
+        border-radius: 20px;
+        min-height: 500px;
+    }
+
+    .steps h2 {
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 15px;
+    }
+
+    .step-tab {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .steps-container {
+        height: 280px;
+    }
+
+    .step_card {
+        padding: 20px 10px;
+    }
+
+    .step_card_img {
+        width: 80px;
+        height: 140px;
+        margin-bottom: 12px;
+    }
+
+    .step_card_text h3 {
+        font-size: 16px;
+    }
+
+    .step_card_text h4 {
+        font-size: 12px;
+    }
+
+    .step_card_text p {
+        font-size: 10px;
+    }
+}

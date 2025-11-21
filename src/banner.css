@@ -1,0 +1,379 @@
+/* Классы для фона */
+.preparation_for_school {
+    background: var(--color-preparation-for-school);
+}
+.start_school {
+    background: var(--color-start-school);
+}
+.russian {
+    background: var(--color-russian);
+}
+.literature {
+    background: var(--color-literature);
+}
+.history {
+    background: var(--color-history);
+}
+.social_science {
+    background: var(--color-social-science);
+}
+.world_around {
+    background: var(--color-world-around);
+}
+.biology {
+    background: var(--color-biology);
+}
+.geography {
+    background: var(--color-geography);
+}
+.math {
+    background: var(--color-math);
+}
+.physics {
+    background: var(--color-physics);
+}
+.chemistry {
+    background: var(--color-chemistry);
+}
+.informatics {
+    background: var(--color-informatics);
+}
+.english {
+    background: var(--color-english);
+}
+.german {
+    background: var(--color-german);
+}
+.french {
+    background: var(--color-french);
+}
+.spanish {
+    background: var(--color-spanish);
+}
+.chess {
+    background: var(--color-chess);
+}
+.voice {
+    background: var(--color-voice);
+}
+.music {
+    background: var(--color-music);
+}
+.programming {
+    background: var(--color-programming);
+}
+
+.submit_btn_default {
+    background-color: var(--color-button-default) !important;
+    color: rgb(255, 255, 255) !important;
+}
+.submit_btn_green {
+    background-color: var(--color-button-green) !important;
+    color: black !important;
+}
+.submit_btn_purple {
+    background-color: var(--color-button-purple) !important;
+}
+.submit_btn_literature {
+    background-color: var(--color-button-literature) !important;
+}
+.submit_btn_history {
+    background-color: var(--color-button-history) !important;
+}
+.submit_btn_russian {
+    background-color: var(--color-button-russian) !important;
+}
+.submit_btn_english {
+    background-color: var(--color-button-english) !important;
+    color: #000 !important;
+}
+.submit_btn_german {
+    background-color: var(--color-button-german) !important;
+}
+.submit_btn_french {
+    background-color: var(--color-button-french) !important;
+}
+.submit_btn_spanish {
+    background-color: var(--color-button-spanish) !important;
+}
+.submit_btn_chess {
+    background-color: var(--color-button-chess) !important;
+    color: black !important;
+}
+.submit_btn_voice {
+    background-color: var(--color-button-voice) !important;
+    color: black !important;
+}
+.submit_btn_music {
+    background-color: var(--color-button-music) !important;
+}
+.submit_btn_programming {
+    color: black !important;
+    background-color: var(--color-button-programming) !important;
+}
+
+.checkbox-container_black {
+    color: rgba(32, 32, 32, 1);
+}
+.banner {
+    position: relative;
+    border-radius: 100px;
+    max-width: 1720px;
+    min-height: 1000px; /* Изменено с height на min-height */
+    padding: 68px 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Добавлено для вертикального выравнивания */
+    overflow: hidden;
+    box-sizing: border-box; /* Добавлено для корректного расчета размеров */
+}
+
+.banner_title {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.08; /* Улучшено для адаптивности */
+    max-width: 858px;
+    margin-bottom: 28px;
+    margin-top: 0; /* Сброс стандартных отступов */
+}
+.banner_title_white {
+    color: #ffff;
+}
+
+.banner_wrapper {
+}
+
+.banner_form_section {
+    max-width: 608px;
+}
+
+.banner_form_title {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.06;
+    margin-bottom: 26px;
+    margin-top: 0; /* Сброс стандартных отступов */
+}
+.banner_form_title_mobile {
+    display: none;
+}
+
+.banner_form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Замена margin-bottom для полей */
+    width: 100%;
+}
+
+.banner_form input {
+    width: 100%;
+    height: 68px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 1);
+    padding: 0 27px;
+    border: 2px solid transparent; /* Добавлено для состояний фокуса */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Анимация для интерактивности */
+}
+
+.banner_form input:focus {
+    outline: none;
+    border-color: rgba(77, 37, 235, 0.5); /* Индикатор фокуса */
+}
+
+.submit_btn {
+    width: 100%;
+    height: 68px;
+    border-radius: 15px;
+    background: rgba(77, 37, 235, 1);
+    color: rgba(248, 249, 250, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Анимация для кнопки */
+    margin-top: 8px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+.submit_btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.submit_btn:active {
+    transform: translateY(0);
+}
+
+.submit_btn:hover,
+.submit_btn:focus {
+    background: rgba(65, 25, 220, 1); /* Эффект при наведении */
+}
+
+.submit_btn:active {
+    transform: translateY(1px); /* Эффект нажатия */
+}
+
+.banner_image {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    z-index: 0;
+}
+
+.banner_image_main {
+    left: 0;
+    bottom: 0;
+}
+.banner_image_main_mobile {
+    display: none;
+    width: 100%;
+}
+/* 
+.banner_image_decor {
+    position: absolute;
+    z-index: 0;
+}
+.banana {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    width: 800px;
+}
+.backpack1 {
+    left: 0;
+    bottom: 0;
+    rotate: -30deg;
+}
+.backpack2 {
+    right: 0;
+    top: 0;
+    rotate: 30deg;
+} */
+
+@media screen and (max-width: 1720px) {
+    .banner {
+        min-height: 800px; /* Изменено с height на min-height */
+        padding: 58px 81px; /* Добавлено для корректного расчета размеров */
+    }
+    .banner_title {
+        font-size: 80px;
+        line-height: 1.08; /* Улучшено для адаптивности */
+        max-width: 858px;
+        margin-bottom: 28px;
+    }
+    .banner_image_main {
+        width: 800px;
+    }
+}
+@media screen and (max-width: 1546px) {
+    .banner_image_main {
+        width: 700px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .banner {
+        min-height: 735px;
+    }
+    .banner_title {
+        font-size: 64px;
+    }
+    .banner_form_title {
+        font-size: 20px;
+    }
+    .banner_form_section {
+        max-width: 437px;
+    }
+    .banner_image_main {
+        width: 630px;
+    }
+}
+/* Laptop */
+@media screen and (max-width: 1280px) {
+    .banner {
+        align-items: flex-start;
+        min-height: 635px;
+    }
+    .banner_image_main {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .banner {
+        align-items: flex-start;
+        min-height: 735px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .banner_title {
+        text-align: center;
+    }
+    .banner_form_section {
+        max-width: 600px;
+    }
+    .banner_form_title {
+        display: none;
+    }
+    .banner_form_title_mobile {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .banner_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner_image_main {
+        display: none;
+    }
+    .banner_image_main_mobile {
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        padding: 60px 80px;
+        margin-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .banner_title {
+        font-size: 32px;
+        width: 100%;
+        text-align: center;
+    }
+    .banner_form_title_mobile {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .banner_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner_image {
+        display: none;
+    }
+}
+
+/* Mobile L */
+@media screen and (max-width: 600px) {
+    .banner {
+        padding: 60px 20px;
+    }
+}

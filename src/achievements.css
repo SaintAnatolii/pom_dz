@@ -1,0 +1,127 @@
+.achievements {
+    width: 100%;
+    padding: 105px 0 124px 0;
+    position: relative;
+}
+.our_achivements {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+}
+.achievements-badge {
+    /* Rectangle */
+    width: 437.19px;
+    height: 182.76px;
+    transform: rotate(0.23deg);
+}
+.achievements-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.achievement-item {
+    max-width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.achievement-item:nth-child(2) {
+    margin-top: -70px;
+    align-self: flex-start;
+}
+
+.achievement-title {
+    color: rgba(32, 32, 32, 1);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+.achievement-description {
+    color: rgba(32, 32, 32, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    max-width: 330px;
+}
+
+.achievement-text {
+    text-align: center;
+}
+/* Laptop */
+@media screen and (max-width: 1024px) {
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .achievements {
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-bottom: 10px;
+    }
+    .achievements-flex {
+        justify-content: flex-start;
+    }
+    .achievement-image {
+        width: 135px;
+        margin-right: 40px;
+    }
+    .achievement-item {
+        max-width: 100%;
+        flex-direction: row;
+        margin-bottom: 35px;
+    }
+    .achievement-description,
+    .achievement-text {
+        text-align: left;
+    }
+    .achievement-title {
+        font-size: 24px;
+    }
+    .achievement-description {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .achievement-item:nth-child(2) {
+        margin-top: 0px;
+        align-self: baseline;
+    }
+    .our_achivements {
+        right: 50%;
+        transform: translateX(50%);
+        width: 200px;
+        top: -20px;
+    }
+}
+/* Mobile L */
+@media screen and (max-width: 425px) {
+    .achievements {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 40px;
+    }
+    .achievement-image {
+        width: 108px;
+        margin-right: 20px;
+    }
+    .achievement-title {
+        font-size: 16px;
+    }
+    .achievement-description {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .achievements {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 10px;
+        padding-top: 50px;
+    }
+}
+/* Mobile M */
+@media screen and (max-width: 375px) {
+}

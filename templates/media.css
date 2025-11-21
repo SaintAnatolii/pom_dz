@@ -1,0 +1,24 @@
+/* Laptop L */
+@media screen and (max-width: 1440px) {
+}
+/* Laptop */
+@media screen and (max-width: 1024px) {
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+}
+/* Mobile L */
+@media screen and (max-width: 425px) {
+}
+/* Mobile M */
+@media screen and (max-width: 375px) {
+}
+
+
+
+На чистом html и css и js написать данную секцию по всем правилам симантичесеской верстки. Это слайдер, за основу взять swiper\
+Сделать адаптив под все разрешения экранов\
+(max-width: 1440px) (max-width: 1024px) (max-width: 768px) (max-width: 425px) (max-width: 375px)
+
+
+нужна 100% копия

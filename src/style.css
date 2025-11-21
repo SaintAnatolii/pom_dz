@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Commissioner';
+    src: url('fonts/Commissioner.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color0: #ffdb87;
+    --color1: #dff3c9;
+    --color2: #d5dcff;
+    --color3: #ffbec6;
+    --color4: #ffecbf;
+    --color5: #f5c7c7;
+    --color6: #f4dfd8;
+    --color7: #ffd5ea;
+    --color8: #ecdeff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Commissioner';
+}
+
+body {
+    background-color: #ffff;
+    /* background-color: #2c2c2c; */
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0;
+    }
+}

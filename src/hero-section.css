@@ -1,0 +1,225 @@
+/* ! помогатор это */
+.hero-section {
+    /* Rectangle 246 */
+    width: 100%;
+    height: 720px;
+    /* max-height: 720px; */
+    border-radius: 100px;
+    background: rgba(77, 37, 235, 1);
+    display: flex;
+    margin-top: 100px;
+    position: relative;
+    /* overflow: hidden;  */
+}
+.hero-section-text {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding-left: 100px;
+    flex: 1;
+    z-index: 2; /* Чтобы текст был поверх изображения */
+}
+.heading-small {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.heading-large {
+    color: #fff;
+    font-size: 105px;
+    font-weight: 800;
+    line-height: 108px;
+    letter-spacing: 0%;
+    text-align: left;
+    white-space: nowrap;
+}
+.image-main {
+    flex: 1;
+    position: relative;
+}
+.image-main img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Laptop L */
+@media screen and (max-width: 1440px) {
+    .hero-section {
+        height: 600px;
+        border-radius: 80px;
+        margin-top: 80px;
+    }
+
+    .heading-large {
+        font-size: 80px;
+        line-height: 84px;
+    }
+
+    .heading-small {
+        font-size: 38px;
+        line-height: 42px;
+    }
+
+    .hero-section-text {
+        padding-left: 80px;
+    }
+}
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+    .hero-section {
+        height: 500px;
+        border-radius: 60px;
+        margin-top: 60px;
+    }
+
+    .heading-large {
+        font-size: 65px;
+        line-height: 68px;
+    }
+
+    .heading-small {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .hero-section-text {
+        padding-left: 60px;
+    }
+
+    .image-main img {
+        width: 90%;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        height: 600px;
+        border-radius: 40px;
+        margin-top: 40px;
+        flex-direction: column; /* Меняем направление flex на мобильных */
+        text-align: center;
+    }
+
+    .hero-section-text {
+        padding: 40px 30px 20px 30px;
+        align-items: center;
+        flex: none;
+    }
+
+    .heading-large {
+        font-size: 48px;
+        line-height: 52px;
+        text-align: center;
+    }
+
+    .heading-small {
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .image-main {
+        flex: none;
+        height: 200px;
+        position: relative;
+    }
+
+    .image-main img {
+        width: 300px;
+        position: relative;
+        top: auto;
+        transform: none;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Mobile L */
+@media screen and (max-width: 425px) {
+    .hero-section {
+        height: 425px;
+        border-radius: 30px;
+        margin-top: 30px;
+    }
+
+    .hero-section-text {
+        padding: 30px 20px 15px 20px;
+    }
+
+    .heading-large {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .heading-small {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .image-main img {
+        width: 200px;
+    }
+}
+
+/* Mobile M */
+/* @media screen and (max-width: 375px) {
+    .hero-section {
+        height: 320px;
+        border-radius: 25px;
+        margin-top: 25px;
+    }
+
+    .hero-section-text {
+        padding: 25px 15px 10px 15px;
+    }
+
+    .heading-large {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .heading-small {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .image-main {
+        height: 130px;
+    }
+
+    .image-main img {
+        width: 65%;
+    }
+} */
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+    .hero-section {
+        height: 300px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+    .heading-large {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .heading-small {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .image-main {
+        height: 120px;
+    }
+}

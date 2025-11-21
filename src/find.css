@@ -1,0 +1,187 @@
+.find {
+    display: none;
+    height: 600px;
+    border-radius: 30px;
+    background: rgba(249, 249, 249, 1);
+    padding: 27px 30px;
+    margin-bottom: 50px;
+}
+
+.find_title {
+    color: rgba(32, 32, 32, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.find_subtitle {
+    color: rgba(32, 32, 32, 1);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.find_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.find_tab {
+    /* Group 921 */
+    padding: 11px 19px;
+    border-radius: 15px;
+    border: none;
+    transition: all 0.3s;
+}
+
+/* Анимация для контента вкладок */
+.find_contents {
+    width: 100%;
+    position: relative;
+    min-height: 270px;
+}
+
+.find_tab_content {
+    display: none;
+    height: 340px;
+    border-radius: 30px;
+    position: relative;
+    padding: 35px 31px;
+    overflow: hidden;
+}
+.find_tab_content a {
+    text-decoration: none;
+}
+
+.find_tab_content.active {
+    display: block;
+}
+
+/* Анимация для элементов внутри вкладки */
+.find_class {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 17px;
+    transform: translateX(-30px);
+    opacity: 0;
+}
+
+.find_tab_content.active .find_class {
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+/* Последовательная анимация для элементов с задержкой */
+.find_tab_content.active .find_class:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.find_tab_content.active .find_class:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.find_tab_content.active .find_class:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.find_tab_content.active .find_class:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.find_tab_content.active .find_class:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.find_tab_content.active .find_class:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.find_tab_content.active .find_class:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.find_tab_content.active .find_class:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+/* Анимация для изображения - выезд справа налево */
+.find_class_image_content {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(100%);
+    height: 166px;
+    opacity: 0;
+}
+
+.find_tab_content.active .find_class_image_content {
+    animation: slideInFromRight 0.6s ease 0.3s forwards;
+}
+
+.find_class img {
+    width: 24px;
+}
+
+/* Keyframes для анимаций */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateY(-50%) translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Дополнительная анимация для кнопок вкладок */
+.find_tab {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.find_tab:hover {
+    transform: scale(1.05);
+}
+
+.find_tab.active {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .find {
+        display: block;
+    }
+}
+@media screen and (max-width: 460px) {
+    .find {
+        height: 770px;
+    }
+}
