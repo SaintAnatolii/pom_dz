@@ -1,24 +1,27 @@
 .teachers_banner {
     width: 100%;
-    min-height: 100vh;
+    min-height: 900px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+    padding: 100px 63px;
     position: relative;
     border-radius: 100px;
-    /* Shadows plashka */
     box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
     background: rgba(248, 249, 250, 1);
     margin-bottom: 96px;
+    background-image: url('./img/teacher_banner/1.png');
+    background-position: right bottom;
+    background-size: 645px 770px;
+    background-repeat: no-repeat;
 }
 
 .icons-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 19px;
     justify-content: center;
+    gap: 15px;
     align-items: center;
+    margin-bottom: 149px;
 }
 
 .icons-row img {
@@ -38,6 +41,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    max-width: 1044px;
 }
 
 .main-title {
@@ -60,135 +64,224 @@
     color: #202020;
 }
 
-.image-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-content img {
-    width: 100%;
-    max-width: 645px;
-    height: auto;
-    object-fit: contain;
-}
-
 /* Tablet */
-@media (max-width: 1400px) {
-    .container {
-        border-radius: 60px;
-        padding: 60px 40px;
+@media (max-width: 1700px) {
+    .text-content {
+        max-width: 800px;
     }
-
     .main-title {
         font-size: 72px;
         line-height: 76px;
     }
+}
 
+@media (max-width: 1400px) {
+    .teachers_banner {
+        min-height: 750px;
+        background-size: 490px 570px;
+        padding: 80px 60px;
+        border-radius: 80px;
+    }
+    .icons-row {
+        margin-bottom: 80px;
+    }
+    .icons-row img {
+        width: 45px;
+        height: 45px;
+    }
+    .main-title {
+        font-size: 62px;
+        line-height: 76px;
+    }
     .subtitle {
         font-size: 36px;
         line-height: 40px;
     }
-
     .content-wrapper {
         gap: 40px;
     }
 }
 
-@media (max-width: 1024px) {
-    .container {
-        border-radius: 40px;
-        padding: 50px 30px;
-    }
-
-    .main-title {
-        font-size: 56px;
-        line-height: 60px;
-    }
-
-    .subtitle {
-        font-size: 28px;
-        line-height: 32px;
-    }
-
-    .icons-row img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .icons-row {
-        gap: 15px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1186px) {
     .teachers_banner {
-        padding: 20px 15px;
+        background-size: 440px 520px;
+        padding: 60px 25px;
+        border-radius: 60px;
+        min-height: 650px;
     }
-
-    .container {
-        border-radius: 30px;
-        padding: 40px 20px;
-        gap: 30px;
-    }
-
-    .content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .main-title {
-        font-size: 42px;
-        line-height: 46px;
-    }
-
-    .subtitle {
-        font-size: 22px;
-        line-height: 26px;
-    }
-
     .icons-row {
+        margin-bottom: 50px;
         gap: 12px;
     }
-
     .icons-row img {
         width: 40px;
         height: 40px;
     }
-
-    .image-content {
-        order: -1;
+    .main-title {
+        font-size: 54px;
+        line-height: 60px;
     }
-
-    .image-content img {
-        max-width: 400px;
+    .subtitle {
+        font-size: 32px;
+        line-height: 36px;
+        width: 500px;
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        border-radius: 20px;
-        padding: 0px 10px;
-        align-items: flex-start;
+@media (max-width: 1024px) {
+    .teachers_banner {
+        background-size: 350px 400px;
+        padding: 50px 25px;
+        border-radius: 50px;
+        min-height: 550px;
     }
-
+    .icons-row {
+        margin-bottom: 40px;
+    }
+    .icons-row img {
+        width: 38px;
+        height: 38px;
+    }
     .main-title {
-        font-size: 32px;
-        line-height: 36px;
+        font-size: 48px;
+        line-height: 52px;
     }
-
     .subtitle {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 28px;
+        line-height: 32px;
+        width: 450px;
     }
+}
 
+@media (max-width: 853px) {
+    .teachers_banner {
+        background-position: right bottom;
+        min-height: 700px;
+        padding: 40px 40px;
+        border-radius: 40px;
+        min-height: 550px;
+    }
+    .icons-row {
+        margin-bottom: 30px;
+        gap: 10px;
+    }
+    .icons-row img {
+        width: 35px;
+        height: 35px;
+    }
+    .subtitle {
+        width: 100%;
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .content-wrapper {
+        gap: 30px;
+    }
+    .main-title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teachers_banner {
+        min-height: 700px;
+        padding: 55px 20px;
+        border-radius: 35px;
+        background-position: center bottom;
+        background-size: 250px 299px;
+        background-color: #4527a0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    .text-content {
+        gap: 25px;
+    }
+    .main-title {
+        color: white;
+        font-size: 38px;
+        line-height: 42px;
+    }
+    .main-title .highlight {
+        color: #d4ff00;
+    }
+    .subtitle {
+        color: white;
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .icons-row {
+        margin-bottom: 25px;
+    }
     .icons-row img {
         width: 32px;
         height: 32px;
     }
+}
 
+/* Mobile L */
+@media screen and (max-width: 425px) {
+    .teachers_banner {
+        min-height: 620px;
+        padding: 30px 15px;
+        border-radius: 30px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        margin-bottom: 60px;
+    }
     .icons-row {
-        gap: 10px;
+        margin-bottom: 20px;
+        gap: 8px;
+    }
+    .icons-row img {
+        width: 28px;
+        height: 28px;
+    }
+    .text-content {
+        gap: 20px;
+    }
+    .main-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+/* Mobile M */
+@media screen and (max-width: 375px) {
+    .teachers_banner {
+        min-height: 550px;
+        padding: 25px 12px;
+        border-radius: 25px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        margin-bottom: 50px;
+    }
+    .icons-row {
+        margin-bottom: 15px;
+        gap: 6px;
+    }
+    .icons-row img {
+        width: 26px;
+        height: 26px;
+    }
+    .main-title {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .subtitle {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .text-content {
+        gap: 15px;
     }
 }

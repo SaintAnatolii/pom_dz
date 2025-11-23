@@ -151,7 +151,7 @@
         border-radius: 30px;
     }
     .why_select h2 {
-        font-size: 80px;
+        font-size: 62px;
         line-height: 85px;
     }
 }
@@ -174,14 +174,17 @@
     .why_card {
         height: auto;
         min-height: 200px;
-        flex-direction: column;
-        text-align: center;
+        /* flex-direction: column; */
+        /* text-align: center; */
         padding: 25px;
     }
 
     .text_content {
-        align-items: center;
+        /* align-items: center; */
         order: 2;
+    }
+    .why_card_content {
+        text-align: left;
     }
 
     .why_img {
