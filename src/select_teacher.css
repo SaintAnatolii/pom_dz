@@ -1,7 +1,7 @@
 .select_teacher {
     padding-bottom: 90px;
 }
-.select_teacher h1 {
+.select_teacher h2 {
     font-size: 105px;
     font-weight: 800;
     text-align: center;
@@ -13,11 +13,13 @@
     text-align: center;
     margin-bottom: 45px;
 }
+/* Анимации для категорий */
 .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 .category {
     padding: 18px 44px;
     font-size: 20px;
@@ -28,23 +30,88 @@
     border: 1px solid rgba(214, 214, 214, 1);
     border-radius: 13px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
 }
+
+/* Анимация при наведении на категорию */
+.category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(77, 37, 235, 0.15);
+    border-color: #4d25eb;
+    color: #4d25eb;
+}
+
+/* Анимация при клике на категорию */
+.category:active {
+    transform: translateY(0) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Активная категория с анимацией */
 .category.active {
     background-color: #4d25eb;
     color: white;
+    border-color: #4d25eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(77, 37, 235, 0.3);
+    animation: categoryPulse 2s infinite;
 }
+
+@keyframes categoryPulse {
+    0%,
+    100% {
+        box-shadow: 0 6px 15px rgba(77, 37, 235, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(77, 37, 235, 0.5);
+    }
+}
+
+/* Эффект ripple при клике */
+.category::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(77, 37, 235, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.category:active::before {
+    width: 100px;
+    height: 100px;
+}
+
+/* Анимации для карточек учителей */
 .teachers-container {
     margin-top: 65px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
+
 .teacher-card {
     display: flex;
     gap: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 50px;
+    position: relative;
 }
+
+/* Анимация при наведении на карточку */
+.teacher-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация фото учителя */
 .teacher_img {
-    /* image 117 */
     width: 360px;
     height: 537px;
     border-radius: 50px;
@@ -53,7 +120,30 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    transition: all 0.4s ease;
+    overflow: hidden;
 }
+
+.teacher-card:hover .teacher_img {
+    transform: scale(1.05);
+    background: linear-gradient(
+        135deg,
+        rgba(249, 249, 249, 1) 0%,
+        rgba(245, 243, 255, 1) 100%
+    );
+}
+
+.teacher_photo img {
+    transition: all 0.4s ease;
+    filter: grayscale(0.1);
+}
+
+.teacher-card:hover .teacher_photo img {
+    transform: scale(1.08);
+    filter: grayscale(0);
+}
+
+/* Анимация иконок предметов */
 .teacher_subjects {
     position: absolute;
     list-style: none;
@@ -61,52 +151,121 @@
     gap: 10px;
     top: 30px;
     left: 30px;
+    transition: all 0.3s ease;
 }
-.teacher_photo {
+
+.teacher-card:hover .teacher_subjects {
+    transform: translateY(-5px);
 }
+
+.teacher_subjects img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.teacher-card:hover .teacher_subjects img {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 5px 10px rgba(77, 37, 235, 0.3));
+}
+
+/* Анимация блока информации */
 .teacher_info {
-    /* image 123 */
     width: 430px;
     height: 536px;
     border-radius: 50px;
     background: rgba(237, 235, 255, 1);
     padding: 52px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.teacher-card:hover .teacher_info {
+    background: linear-gradient(
+        135deg,
+        rgba(237, 235, 255, 1) 0%,
+        rgba(230, 227, 255, 1) 100%
+    );
+    transform: translateX(5px);
+}
+
+/* Эффект свечения для карточки */
+.teacher-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        rgba(77, 37, 235, 0.1) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.teacher-card:hover::before {
+    opacity: 1;
+}
+
+/* Анимация текста в карточке */
 .teacher_name {
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
     margin-bottom: 23px;
+    transition: all 0.3s ease;
 }
-.teacher_univercity {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 59px;
+
+.teacher-card:hover .teacher_name {
+    color: #4d25eb;
+    transform: translateX(5px);
 }
+
+.teacher_univercity,
 .teacher_exp {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 59px;
+    transition: all 0.3s ease;
 }
+
+.teacher-card:hover .teacher_univercity,
+.teacher-card:hover .teacher_exp {
+    transform: translateX(3px);
+}
+
 .teacher_subjects_list {
     list-style: none;
     margin-bottom: 43px;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
+    transition: all 0.3s ease;
 }
+
+.teacher-card:hover .teacher_subjects_list {
+    transform: translateX(3px);
+}
+
 .teacher_subjects_list span {
     font-weight: 900;
+    transition: all 0.3s ease;
 }
-.teacher_subjects_list li {
-    list-style: none;
-    font-size: 20px;
-    font-weight: 200;
+
+.teacher-card:hover .teacher_subjects_list span {
+    color: #4d25eb;
 }
+
+/* Анимация кнопки "Записаться" */
 .teacher_submit {
-    /* Group 1043 */
     width: 208px;
     height: 65px;
     box-sizing: border-box;
@@ -117,4 +276,91 @@
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анимация при наведении на кнопку */
+.teacher_submit:hover {
+    background-color: #4d25eb;
+    color: white;
+    border-color: #4d25eb;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(77, 37, 235, 0.3);
+}
+
+/* Анимация при клике на кнопку */
+.teacher_submit:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(77, 37, 235, 0.4);
+    transition: all 0.1s ease;
+}
+
+/* Эффект ripple для кнопки */
+.teacher_submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.teacher_submit:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Дополнительная анимация для текста кнопки */
+.teacher_submit span {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.teacher_submit:hover span {
+    letter-spacing: 1px;
+}
+
+/* Адаптивность анимаций */
+@media (max-width: 768px) {
+    .teacher-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .teacher_submit:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
+/* Плавное появление карточек при загрузке */
+.teacher-card {
+    animation: cardAppear 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.teacher-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.teacher-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.teacher-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.teacher-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

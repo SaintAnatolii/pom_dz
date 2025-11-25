@@ -1,0 +1,35 @@
+{
+    "teachers": [
+        {
+            "id": 8,
+            "full_name": "Петрова Ксения",
+            "education": "Высшее СКФУ",
+            "experience": 3,
+            "subjects": ["Математика", "Программирование", "Информатика"],
+            "photo": "uploads/image_117.png",
+            "created_at": "2025-11-22 20:52:30",
+            "updated_at": "2025-11-22 20:52:30"
+        },
+        {
+            "id": 10,
+            "full_name": "Иванова Наталья",
+            "education": "Высшее РСИ",
+            "experience": 4,
+            "subjects": ["Биология", "Обществознание"],
+            "photo": "uploads/image_120.png",
+            "created_at": "2025-11-22 20:53:52",
+            "updated_at": "2025-11-22 20:53:52"
+        },
+        {
+            "id": 11,
+            "full_name": "Сидорова Елена",
+            "education": "Высшее СРКОУ",
+            "experience": 3,
+            "subjects": ["Английский", "Испанский", "Французский"],
+            "photo": "uploads/image_119.png",
+            "created_at": "2025-11-22 20:55:07",
+            "updated_at": "2025-11-22 20:55:07"
+        }
+    ],
+    "last_id": 11
+}

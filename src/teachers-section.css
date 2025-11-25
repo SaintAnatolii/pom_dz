@@ -1,130 +1,3 @@
-/* 
-.swiper {
-    width: 100%;
-    height: 700px;
-}
-.teachers {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-.teacher-title {
-    color: rgba(32, 32, 32, 1);
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 98px;
-    letter-spacing: 0%;
-    text-align: center;
-    margin-bottom: 74px;
-}
-.teacher-cards {
-    display: flex;
-}
-.teacher-card {
-    padding: 38px 42px;
-    width: 360px;
-    height: 666px;
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-
-.language-badges {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    gap: 1px;
-}
-.language-badge {
-    width: 48px;
-}
-
-.teacher-photo {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    object-fit: cover;
-    position: relative;
-    margin: 0 auto;
-}
-.teacher-photo_img {
-    width: 100%;
-    margin-bottom: 26px;
-}
-
-.teacher-name {
-    color: rgba(32, 32, 32, 1);
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 13px;
-}
-
-.teacher-languages {
-    color: rgba(32, 32, 32, 1);
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 23px;
-}
-
-.profile-btn {
-    padding: 19px 42px;
-    color: rgba(255, 255, 255, 1);
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 60px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 37px;
-    background: rgba(217, 177, 205, 1);
-}
-
-.profile-btn:hover {
-    background: #b88fc2;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(200, 162, 208, 0.3);
-}
-@media screen and (max-width: 1440px) {
-}
-@media screen and (max-width: 1024px) {
-}
-@media screen and (max-width: 768px) {
-    .teacher-title {
-        font-size: 55px;
-    }
-}
-
-@media (max-width: 480px) {
-    .teacher-title {
-        margin-bottom: 22px;
-    }
-    .teachers {
-        margin-top: 21px;
-        margin-bottom: 27px;
-    }
-    .teacher-title {
-        font-size: 24px;
-    }
-    .teacher-card {
-        padding: 25px;
-    }
-
-    .teacher-name {
-        font-size: 24px;
-    }
-
-    .teacher-languages {
-        font-size: 15px;
-    }
-} */
-
-/* teachers */
 .teachers {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -248,6 +121,20 @@
     box-shadow: 0 8px 20px rgba(200, 162, 208, 0.3);
 }
 
+.teacher_sad {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.teacher_sad img {
+    height: 400px;
+}
+.teacher_sad_text {
+    text-align: center;
+    font-size: 40px;
+}
+
 /* Адаптив */
 
 /* Laptop L */
@@ -314,6 +201,12 @@
         font-size: 16px;
         min-width: 140px;
     }
+    .teacher_sad img {
+        height: 350px;
+    }
+    .teacher_sad_text {
+        font-size: 30px;
+    }
 }
 
 /* Tablet */
@@ -369,6 +262,12 @@
     .language-badge {
         width: 40px;
         height: 40px;
+    }
+    .teacher_sad img {
+        height: 250px;
+    }
+    .teacher_sad_text {
+        font-size: 16px;
     }
 }
 
