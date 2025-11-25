@@ -123,7 +123,7 @@
 
 .teacher_sad {
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
