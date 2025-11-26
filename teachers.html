@@ -415,99 +415,6 @@
 
           </div>
 
-          <div class="teacher-card">
-
-            <div class="teacher_img">
-              <ul class="teacher_subjects">
-                <li>
-                  <img src="./src/img/classes/active_математика.svg" alt="математика">
-                </li>
-                <li>
-                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
-                </li>
-              </ul>
-
-              <div class="teacher_photo">
-                <img src="./uploads/image_122.png" alt="фото учителя">
-              </div>
-            </div>
-
-            <div class="teacher_info">
-              <div class="teacher_name">Анастасия</div>
-              <div class="teacher_univercity">Московский государственный педагогический университет </div>
-              <div class="teacher_exp">6 лет репетиторской деятельности</div>
-              <ul class="teacher_subjects_list">
-                <span>Предметы:</span>
-                <li>- математика</li>
-                <li>- информатика</li>
-              </ul>
-              <button class="teacher_submit">Записаться</button>
-            </div>
-
-          </div>
-
-          <div class="teacher-card">
-
-            <div class="teacher_img">
-              <ul class="teacher_subjects">
-                <li>
-                  <img src="./src/img/classes/active_математика.svg" alt="математика">
-                </li>
-                <li>
-                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
-                </li>
-              </ul>
-
-              <div class="teacher_photo">
-                <img src="./uploads/image_122.png" alt="фото учителя">
-              </div>
-            </div>
-
-            <div class="teacher_info">
-              <div class="teacher_name">Анастасия</div>
-              <div class="teacher_univercity">Московский государственный педагогический университет </div>
-              <div class="teacher_exp">6 лет репетиторской деятельности</div>
-              <ul class="teacher_subjects_list">
-                <span>Предметы:</span>
-                <li>- математика</li>
-                <li>- информатика</li>
-              </ul>
-              <button class="teacher_submit">Записаться</button>
-            </div>
-
-          </div>
-
-          <div class="teacher-card">
-
-            <div class="teacher_img">
-              <ul class="teacher_subjects">
-                <li>
-                  <img src="./src/img/classes/active_математика.svg" alt="математика">
-                </li>
-                <li>
-                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
-                </li>
-              </ul>
-
-              <div class="teacher_photo">
-                <img src="./uploads/image_122.png" alt="фото учителя">
-              </div>
-            </div>
-
-            <div class="teacher_info">
-              <div class="teacher_name">Анастасия</div>
-              <div class="teacher_univercity">Московский государственный педагогический университет </div>
-              <div class="teacher_exp">6 лет репетиторской деятельности</div>
-              <ul class="teacher_subjects_list">
-                <span>Предметы:</span>
-                <li>- математика</li>
-                <li>- информатика</li>
-              </ul>
-              <button class="teacher_submit">Записаться</button>
-            </div>
-
-          </div>
-
 
         </div>
       </section>
@@ -782,23 +689,36 @@
 
   <div class="modal-overlay">
     <div class="modal-container">
+      <div class="modal_close">
+        &#10006;
+      </div>
+      <h2 class="modal_title">Запись на пробное занятие</h2>
       <form class="modal_form">
-        <div class="banner_form_group">
-          <img src="./src/ class=" banner_image_main_mobile" alt="Ребенок занимается подготовкой к школе с репетитором"
-            loading="lazy">
-          <input type="text" name="firstname" id="" placeholder="Ваше имя" required>
+        <div class="modal_form_group">
+          <!-- <img src="./src/ class=" banner_image_main_mobile" alt="Ребенок занимается подготовкой к школе с репетитором"
+            loading="lazy"> -->
+          <input type="text" name="teacher" value="Анастасия - математика, информатика" required>
         </div>
-        <div class="banner_form_group">
-          <input type="tel" name="phone" id="" placeholder="Ваш номер" required>
+        <div class="modal_form_group">
+          <input type="text" name="firstname" placeholder="Ваше имя" required>
+        </div>
+        <div class="modal_form_group">
+          <input type="tel" name="phone" placeholder="Ваш номер" required>
         </div>
 
-        <div class="banner_form_group">
-          <input type="email" name="email" id="" placeholder="Ваш email" required>
+        <div class="modal_form_group">
+          <input type="email" name="email" placeholder="Ваш email" required>
         </div>
 
-        <button type="submit" class="submit_btn submit_btn_green">Записаться на
+        <button type="submit" class="modal_btn_submit">Записаться на
           занятие</button>
+        <div class="modal_checkbox-container">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
+            информация по обработке персональных данных согласно Российского законодательства</label>
+        </div>
       </form>
+
     </div>
   </div>
 

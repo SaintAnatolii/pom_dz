@@ -1,6 +1,6 @@
 /* Добавляем стили для подложки и запрета скролла */
-body.modal-open {
-    overflow: hidden;
+.modal-overlay.modal-open {
+    display: flex;
 }
 
 .modal-overlay {
@@ -8,17 +8,264 @@ body.modal-open {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(
         0,
         0,
         0,
         0.7
     ); /* Более темная полупрозрачная подложка */
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
     z-index: 10000; /* Увеличиваем z-index для надежности */
     backdrop-filter: blur(5px); /* Добавляем размытие фона */
+}
+/* Существующие стили */
+.modal_title {
+    color: rgba(255, 255, 255, 1);
+    font-size: 95px;
+    font-weight: 800;
+    line-height: 108px;
+    text-align: center;
+    margin-bottom: 99px;
+}
+
+.modal-container {
+    width: 1720px;
+    height: 900px;
+    border-radius: 100px;
+    box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(77, 37, 235, 1);
+    background-image: url(./img/modal/1.png);
+    background-position: right bottom;
+    background-size: 678px 704px;
+    background-repeat: no-repeat;
+    padding: 51px 150px;
+    position: relative;
+}
+.modal_form {
+    max-width: 608px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 20px;
+}
+.modal_form_group {
+    width: 100%;
+}
+.modal_form_group input {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    border: 1px solid rgba(208, 208, 208, 1);
+    border-radius: 40.5px;
+    background: rgba(255, 255, 255, 1);
+    padding-left: 30px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.modal_btn_submit {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 40.5px;
+    background: #cdff07;
+    color: rgba(32, 32, 32, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.modal_checkbox-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+#privacy {
+    width: 16px;
+    height: 16px;
+}
+.modal_close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 53px;
+    color: white;
+    cursor: pointer;
+}
+@media screen and (max-width: 1600px) {
+    .modal_title {
+        font-size: 70px;
+        margin-bottom: 61px;
+    }
+    .modal-container {
+        max-width: 1720px;
+        height: 900px;
+        background-size: 610.2px 633.6px;
+        padding: 71px 150px;
+    }
+}
+/* Адаптив для 1440px */
+@media screen and (max-width: 1440px) {
+    .modal-container {
+        width: 1200px;
+        height: 670px;
+        border-radius: 70px;
+        padding: 50px 55px;
+        background-size: 473px 492px;
+    }
+
+    .modal_title {
+        font-size: 65px;
+        line-height: 75px;
+        margin-bottom: 69px;
+    }
+
+    .modal_form {
+        max-width: 524px;
+        gap: 16px;
+    }
+
+    .modal_form_group input {
+        height: 55px;
+        border-radius: 33px;
+        font-size: 18px;
+        padding-left: 25px;
+    }
+
+    .modal_btn_submit {
+        height: 55px;
+        border-radius: 33px;
+        font-size: 20px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 16px;
+        padding: 0px 16px;
+        line-height: 17px;
+    }
+
+    .modal_close {
+        top: 40px;
+        right: 40px;
+        font-size: 40px;
+    }
+}
+
+/* Адаптив для 1024px */
+@media screen and (max-width: 1220px) {
+    .modal_form {
+        max-width: 500px;
+        gap: 16px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .modal-overlay {
+        padding: 15px;
+    }
+
+    .modal-container {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        min-height: 500px;
+        border-radius: 40px;
+        padding: 40px 30px;
+        background-image: none; /* Убираем фоновую картинку */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем по горизонтали */
+        justify-content: center; /* Центрируем по вертикали */
+    }
+
+    .modal_title {
+        font-size: 42px;
+        line-height: 46px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .modal_form {
+        max-width: 400px;
+        width: 100%;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем элементы формы */
+    }
+
+    .modal_form_group {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .modal_form_group input {
+        height: 50px;
+        border-radius: 25px;
+        font-size: 14px;
+        padding-left: 18px;
+    }
+
+    .modal_btn_submit {
+        height: 50px;
+        border-radius: 25px;
+        font-size: 16px;
+        max-width: 350px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 0px 10px;
+        max-width: 350px;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .modal_close {
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+/* Дополнительный адаптив для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    .modal-container {
+        border-radius: 30px;
+        padding: 30px 20px;
+        min-height: 450px;
+    }
+
+    .modal_title {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 30px;
+    }
+
+    .modal_form_group,
+    .modal_btn_submit,
+    .modal_checkbox-container {
+        max-width: 100%;
+    }
+
+    .modal_form_group input {
+        height: 45px;
+        border-radius: 22px;
+        font-size: 14px;
+    }
+
+    .modal_btn_submit {
+        height: 45px;
+        font-size: 16px;
+    }
 }

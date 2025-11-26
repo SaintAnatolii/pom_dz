@@ -124,7 +124,7 @@ const loadTeachersData = () => {
                 // Если учителей не найдено, показываем сообщение
                 teachersCard.innerHTML = `
                     <div class="teacher_sad">
-                        <img src="./uploads/teacher_not_found.png" alt="грустный учитель">
+                        <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель">
                         <div class="teacher_sad_text">Набор преподавателей на этот курс завершается, <br>скоро мы представим новых специалистов</div>
                     </div>
                 `
