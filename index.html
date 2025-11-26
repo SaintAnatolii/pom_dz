@@ -1196,7 +1196,7 @@
 
       <section class="issub">
         <div class="issub-item issub-item-rev">
-          <img src="/src/img/pomogator_is/is1.png" alt="" class="issub-image">
+          <img src="./src/img/pomogator_is/is1.png" alt="" class="issub-image">
           <div class="issub_text">
             <p class="issub-item-title">Школьная программа</p>
             <p class="issub-item-subtitle">Догоним и перегоним класс по программе, позаботимся о домашних работах и
@@ -1205,7 +1205,7 @@
           </div>
         </div>
         <div class="issub-item">
-          <img src="/src/img/pomogator_is/is2.png" alt="" class="issub-image issub-image-flip">
+          <img src="./src/img/pomogator_is/is2.png" alt="" class="issub-image issub-image-flip">
           <div class="issub_text">
 
             <p class="issub-item-title">Подготовка к школе</p>
@@ -1215,7 +1215,7 @@
           </div>
         </div>
         <div class="issub-item issub-item_reverse">
-          <img src="/src/img/pomogator_is/is3.png" alt="" class="issub-image issub-image-flip him">
+          <img src="./src/img/pomogator_is/is3.png" alt="" class="issub-image issub-image-flip him">
           <div class="issub_text">
 
             <p class="issub-item-title">Подготовка к ЕГЭ/ОГЭ</p>
@@ -1225,7 +1225,7 @@
           </div>
         </div>
         <div class="issub-item issub-item_reverse">
-          <img src="/src/img/pomogator_is/is4.png" alt="" class="issub-image him2">
+          <img src="./src/img/pomogator_is/is4.png" alt="" class="issub-image him2">
           <div class="issub_text">
 
             <p class="issub-item-title">Кружки и секции</p>
@@ -1977,6 +1977,22 @@
 
 
   </footer>
+
+
+  <script>
+    // Глобальная обработка ошибок загрузки изображений
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function () {
+          console.error('Ошибка загрузки изображения:', this.src);
+          // Можно установить изображение-заглушку
+          if (!this.hasAttribute('data-no-fallback')) {
+            this.src = './uploads/teacher_not_found.png';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

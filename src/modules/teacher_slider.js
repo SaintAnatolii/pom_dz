@@ -112,9 +112,9 @@ const loadTeachersData = () => {
     // Получаем предмет ТОЛЬКО когда функция вызывается
     const dataSubject = getDataSubject()
 
-    getData('/data.json')
+    // ИСПРАВЛЕННЫЙ ПУТЬ - используем относительный путь от корня
+    getData('./data.json')
         .then((teachersData) => {
-
             teachersCard.textContent = ''
 
             // Фильтруем учителей по предмету, если указан
@@ -122,11 +122,10 @@ const loadTeachersData = () => {
 
             if (filteredTeachers.length === 0) {
                 // Если учителей не найдено, показываем сообщение
-                document.querySelector('.teacher-cards').innerHTML = `
+                teachersCard.innerHTML = `
                     <div class="teacher_sad">
                         <img src="./uploads/teacher_not_found.png" alt="грустный учитель">
-                        <div class="teacher_sad_text">Набор преподавателей на этот курс завершается, <br>скоро мы представим новых
-                            специалистов</div>
+                        <div class="teacher_sad_text">Набор преподавателей на этот курс завершается, <br>скоро мы представим новых специалистов</div>
                     </div>
                 `
             } else {
@@ -135,7 +134,6 @@ const loadTeachersData = () => {
                     const card = createTeacherCard(teacher)
                     teachersCard.insertAdjacentHTML('beforeend', card)
                 })
-
             }
 
             // Переинициализируем Swiper после добавления карточек
@@ -145,14 +143,15 @@ const loadTeachersData = () => {
         })
         .catch(error => {
             console.error('Ошибка загрузки данных:', error)
-            //     teachersCard.innerHTML = `
-            //     <div class="error-message">
-            //         <p>Ошибка загрузки данных. Пожалуйста, попробуйте позже.</p>
-            //     </div>
-            // `
+            // Показываем сообщение об ошибке
+            teachersCard.innerHTML = `
+                <div class="teacher_sad">
+                    <img src="./uploads/teacher_not_found.png" alt="грустный учитель">
+                    <div class="teacher_sad_text">Временно недоступно. Пожалуйста, попробуйте позже.</div>
+                </div>
+            `
         })
 }
-
 // Функция для показа всех учителей (при клике на кнопку)
 window.loadAllTeachers = () => {
     loadTeachersData()

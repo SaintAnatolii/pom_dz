@@ -4,7 +4,7 @@ const reviewsList = [
         name: "Наталья Иванова",
         text: "Помогатор - это единственное, что меня выручало в подготовке сына к ЕГЭ по математике. Преподаватель объяснял сложные темы простым языком, и сын сдал экзамен на 92 балла! ",
         subject: "Математика",
-        photo: "/src/img/help/teacher1.png",
+        photo: "./src/img/help/teacher1.png",
         city: "г. Москва",
         color: "#d4f4dd"
     },
@@ -12,7 +12,7 @@ const reviewsList = [
         name: "Александр Петров",
         text: "Дочь занималась английским с репетитором из Помогатора полгода. Результат превзошел все ожидания - с нуля вышла на уровень B1. Учительница всегда находила подход, занятия проходили в игровой форме.",
         subject: "Английский язык",
-        photo: "/src/img/help/teacher2.png",
+        photo: "./src/img/help/teacher2.png",
         city: "г. Москва",
         color: "#fff9e6"
     },
@@ -20,7 +20,7 @@ const reviewsList = [
         name: "Мария Сидорова",
         text: "Спасибо за подготовку к школе! Ребенок с радостью ходил на занятия, а теперь уверенно чувствует себя в первом классе. Особенно хочу отметить развитие логического мышления и речи.",
         subject: "Подготовка к школе",
-        photo: "/src/img/help/teacher3.png",
+        photo: "./src/img/help/teacher3.png",
         city: "г. Москва",
         color: "#ffe6f0"
     },
@@ -28,7 +28,7 @@ const reviewsList = [
         name: "Дмитрий Козлов",
         text: "Занимались физикой для подготовки к ОГЭ. Преподаватель смог заинтересовать сына, который до этого не любил предмет. Результат - твердая четверка на экзамене! Рекомендую всем родителям.",
         subject: "Физика",
-        photo: "/src/img/help/teacher1.png",
+        photo: "./src/img/help/teacher1.png",
         city: "г. Москва",
         color: "#e6f7ff"
     },
@@ -36,7 +36,7 @@ const reviewsList = [
         name: "Ольга Николаева",
         text: "Огромная благодарность репетитору по русскому языку! Дочь улучшила оценки с тройки до пятерки за два месяца. Занятия проходили интересно, с использованием современных методик.",
         subject: "Русский язык",
-        photo: "/src/img/help/teacher2.png",
+        photo: "./src/img/help/teacher2.png",
         city: "г. Москва",
         color: "#f0e6ff"
     },
@@ -44,7 +44,7 @@ const reviewsList = [
         name: "Сергей Васильев",
         text: "Сын занимался программированием в клубе Помогатора. Теперь сам пишет простые игры! Преподаватель смог объяснить сложные концепции доступным языком для 10-летнего ребенка.",
         subject: "Программирование",
-        photo: "/src/img/help/teacher3.png",
+        photo: "./src/img/help/teacher3.png",
         city: "г. Москва",
         color: "#fff0e6"
     },
@@ -52,7 +52,7 @@ const reviewsList = [
         name: "Екатерина Морозова",
         text: "Занимались химией для поступления в медицинский. Преподаватель - настоящий профессионал! Объяснял сложные темы на примерах из жизни. Поступили в желаемый ВУЗ!",
         subject: "Химия",
-        photo: "/src/img/help/teacher1.png",
+        photo: "./src/img/help/teacher1.png",
         city: "г. Москва",
         color: "#e6ffe6"
     },
@@ -60,7 +60,7 @@ const reviewsList = [
         name: "Иван Кузнецов",
         text: "Дочь занималась вокалом. За полгода заметно улучшились голосовые данные, появилась уверенность в себе. Преподаватель нашла подход к стеснительному ребенку.",
         subject: "Вокал",
-        photo: "/src/img/help/teacher2.png",
+        photo: "./src/img/help/teacher2.png",
         city: "г. Москва",
         color: "#fff5e6"
     },
@@ -68,7 +68,7 @@ const reviewsList = [
         name: "Анна Павлова",
         text: "Спасибо за помощь с домашними заданиями! Ребенок стал самостоятельнее, улучшилась успеваемость по всем предметам. Особенно помогли с математикой и русским.",
         subject: "Начальная школа",
-        photo: "/src/img/help/teacher3.png",
+        photo: "./src/img/help/teacher3.png",
         city: "г. Москва",
         color: "#e6f0ff"
     },
@@ -76,7 +76,7 @@ const reviewsList = [
         name: "Михаил Орлов",
         text: "Занимались историей для углубленного изучения. Преподаватель смог заинтересовать предметом, теперь сын участвует в олимпиадах. Спасибо за качественную подготовку!",
         subject: "История",
-        photo: "/src/img/help/teacher1.png",
+        photo: "./src/img/help/teacher1.png",
         city: "г. Москва",
         color: "#ffe6e6"
     }
@@ -153,7 +153,9 @@ function initReviewsSwiper() {
             delay: 5000,
             disableOnInteraction: false,
         };
-        reviewsSwiper.autoplay.start();
+        if (reviewsSwiper.autoplay && typeof reviewsSwiper.autoplay.start === 'function') {
+            reviewsSwiper.autoplay.start();
+        }
 
         console.log('Swiper инициализирован с', reviewsList.length, 'отзывами');
     }, 100);

@@ -78,6 +78,7 @@
   <link rel="stylesheet" href="src/why.css">
   <link rel="stylesheet" href="src/first_class.css">
   <link rel="stylesheet" href="src/platform.css">
+  <link rel="stylesheet" href="src/modal.css">
 
   <script src="./src/modules/menu.js" defer></script>
 
@@ -382,6 +383,7 @@
         </div>
 
         <div class="teachers-container">
+
           <div class="teacher-card">
 
             <div class="teacher_img">
@@ -395,7 +397,7 @@
               </ul>
 
               <div class="teacher_photo">
-                <img src="./src/img/image_122.png" alt="фото учителя">
+                <img src="./uploads/image_122.png" alt="фото учителя">
               </div>
             </div>
 
@@ -426,7 +428,7 @@
               </ul>
 
               <div class="teacher_photo">
-                <img src="./src/img/image_122.png" alt="фото учителя">
+                <img src="./uploads/image_122.png" alt="фото учителя">
               </div>
             </div>
 
@@ -457,7 +459,7 @@
               </ul>
 
               <div class="teacher_photo">
-                <img src="./src/img/image_122.png" alt="фото учителя">
+                <img src="./uploads/image_122.png" alt="фото учителя">
               </div>
             </div>
 
@@ -488,7 +490,7 @@
               </ul>
 
               <div class="teacher_photo">
-                <img src="./src/img/image_122.png" alt="фото учителя">
+                <img src="./uploads/image_122.png" alt="фото учителя">
               </div>
             </div>
 
@@ -505,6 +507,7 @@
             </div>
 
           </div>
+
 
         </div>
       </section>
@@ -684,7 +687,7 @@
   </main>
 
 
-  <footer style="background: linear-gradient(135deg, #6b46ff 0%, #5b3fe8 100%);">
+  <footer style="background: #4527a0">
     <img class="footer_babana" src="src/img/footer/banana.svg" alt="узор">
     <div class="footer-container">
       <div class="footer-main">
@@ -776,6 +779,28 @@
 
 
   </footer>
+
+  <div class="modal-overlay">
+    <div class="modal-container">
+      <form class="modal_form">
+        <div class="banner_form_group">
+          <img src="./src/ class=" banner_image_main_mobile" alt="Ребенок занимается подготовкой к школе с репетитором"
+            loading="lazy">
+          <input type="text" name="firstname" id="" placeholder="Ваше имя" required>
+        </div>
+        <div class="banner_form_group">
+          <input type="tel" name="phone" id="" placeholder="Ваш номер" required>
+        </div>
+
+        <div class="banner_form_group">
+          <input type="email" name="email" id="" placeholder="Ваш email" required>
+        </div>
+
+        <button type="submit" class="submit_btn submit_btn_green">Записаться на
+          занятие</button>
+      </form>
+    </div>
+  </div>
 
 
   <script>

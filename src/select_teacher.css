@@ -12,6 +12,7 @@
     font-weight: 400;
     text-align: center;
     margin-bottom: 45px;
+    padding: 0 20px;
 }
 /* Анимации для категорий */
 .categories {
@@ -88,12 +89,13 @@
     height: 100px;
 }
 
-/* Анимации для карточек учителей */
+/* Анимации для карточек учителей - ЗАМЕНА FLEX НА GRID */
 .teachers-container {
     margin-top: 65px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    justify-items: center;
 }
 
 .teacher-card {
@@ -102,6 +104,8 @@
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 50px;
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Анимация при наведении на карточку */
@@ -327,17 +331,6 @@
     letter-spacing: 1px;
 }
 
-/* Адаптивность анимаций */
-@media (max-width: 768px) {
-    .teacher-card:hover {
-        transform: translateY(-4px) scale(1.01);
-    }
-
-    .teacher_submit:hover {
-        transform: translateY(-2px) scale(1.02);
-    }
-}
-
 /* Плавное появление карточек при загрузке */
 .teacher-card {
     animation: cardAppear 0.6s ease forwards;
@@ -362,5 +355,395 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Адаптивность анимаций */
+@media (max-width: 768px) {
+    .teacher-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .teacher_submit:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
+@media (max-width: 1660px) {
+    .teacher_img {
+        width: 48%;
+        height: 490px;
+    }
+    .teacher_info {
+        width: 48%;
+        height: 490px;
+        padding: 40px;
+    }
+    .teacher_name {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 56px;
+        margin-bottom: 15px;
+    }
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Адаптивность для Grid */
+@media (max-width: 1400px) {
+    .teachers-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .teacher-card {
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .teacher_img {
+        width: 280px;
+        height: 450px;
+    }
+    .teacher_photo img {
+        width: 100%;
+    }
+
+    .teacher_info {
+        width: 280px;
+        height: 450px;
+        padding: 35px;
+    }
+
+    .teacher_name {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 15px;
+    }
+
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 30px;
+    }
+
+    .teacher_subjects_list {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .teacher_submit {
+        width: 180px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .teacher_subjects {
+        top: 20px;
+        left: 20px;
+    }
+
+    .teacher_subjects img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .select_teacher h2 {
+        font-size: 80px;
+        margin-bottom: 50px;
+    }
+
+    .select_teacher p {
+        font-size: 36px;
+        margin-bottom: 35px;
+    }
+
+    .categories {
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .category {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .teachers-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .teacher-card {
+        gap: 12px;
+    }
+
+    .teacher_img {
+        width: 220px;
+        height: 380px;
+    }
+
+    .teacher_info {
+        width: 220px;
+        height: 380px;
+        padding: 25px;
+    }
+
+    .teacher_name {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .teacher_subjects_list {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .teacher_submit {
+        width: 150px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .teacher_subjects {
+        top: 15px;
+        left: 15px;
+    }
+
+    .teacher_subjects img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 950px) {
+    .select_teacher h2 {
+        font-size: 47px;
+        margin-bottom: 30px;
+    }
+    .select_teacher p {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .teachers-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .teacher-card {
+        max-width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .teacher_img {
+        width: 280px;
+        height: 420px;
+    }
+
+    .teacher_info {
+        width: 280px;
+        height: 420px;
+        padding: 30px;
+    }
+
+    .teacher_name {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .teacher_subjects_list {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .teacher_submit {
+        width: 160px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 610px) {
+    .select_teacher h2 {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    .select_teacher p {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .categories {
+        gap: 10px;
+    }
+
+    .category {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .teachers-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .teacher-card {
+        max-width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .teacher_img {
+        width: 45%;
+        height: 320px;
+        border-radius: 30px;
+    }
+
+    .teacher_info {
+        width: 52%;
+        height: 320px;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .teacher_name {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 15px;
+    }
+
+    .teacher_subjects_list {
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 15px;
+    }
+
+    .teacher_submit {
+        width: 140px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .teacher_subjects {
+        top: 12px;
+        left: 12px;
+    }
+
+    .teacher_subjects img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .select_teacher h2 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .select_teacher p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .categories {
+        gap: 8px;
+    }
+
+    .category {
+        padding: 10px 15px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+
+    .teachers-container {
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .teacher-card {
+        gap: 8px;
+    }
+
+    .teacher_img {
+        width: 45%;
+        height: 280px;
+        border-radius: 25px;
+    }
+
+    .teacher_info {
+        width: 52%;
+        height: 280px;
+        padding: 15px;
+        border-radius: 25px;
+    }
+
+    .teacher_name {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 8px;
+    }
+
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 11px;
+        line-height: 14px;
+        margin-bottom: 12px;
+    }
+
+    .teacher_subjects_list {
+        font-size: 11px;
+        line-height: 14px;
+        margin-bottom: 12px;
+    }
+
+    .teacher_submit {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .teacher_subjects {
+        top: 10px;
+        left: 10px;
+    }
+
+    .teacher_subjects img {
+        width: 22px;
+        height: 22px;
     }
 }
