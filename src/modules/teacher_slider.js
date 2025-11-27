@@ -8,7 +8,7 @@ export const getData = (url) => {
     })
 }
 
-const BASE_URL = 'http://saintdevor.temp.swtest.ru/'; // Оставляем как было
+const BASE_URL = 'http://saintdevor.temp.swtest.ru/';
 
 const allSubjects = [
     'Подготовка к школе', 'Начальная школа', 'Русский язык', 'Литература',
@@ -39,6 +39,29 @@ const allSubjectsIcons = {
     'Музыка': 'active_музыка.svg',
     'Программирование': 'active_программирование.svg',
     'Вокал': 'active_вокал.svg',
+}
+
+// Функция для получения корректного URL
+const getCorrectUrl = (path) => {
+    if (!path) return './src/img/uploads/default-teacher.jpg';
+
+    // Если путь уже полный URL, возвращаем как есть
+    if (path.startsWith('http')) {
+        return path;
+    }
+
+    // Если путь начинается с site/uploads/, добавляем BASE_URL
+    if (path.startsWith('site/uploads/')) {
+        return BASE_URL + path;
+    }
+
+    // Если путь начинается с uploads/, добавляем BASE_URL
+    if (path.startsWith('uploads/')) {
+        return BASE_URL + path;
+    }
+
+    // Для локальных путей возвращаем как есть (относительные пути)
+    return path;
 }
 
 // Функция для получения предмета из data-атрибута
@@ -73,8 +96,9 @@ const createIcons = (subjects) => {
 
     subjects.forEach((subject) => {
         if (allSubjectsIcons[subject]) {
+            const iconPath = getCorrectUrl(`./src/img/classes/${allSubjectsIcons[subject]}`);
             languageBadges.insertAdjacentHTML('beforeend',
-                `<img class="language-badge" src="./src/img/classes/${allSubjectsIcons[subject]}" alt="${subject}">`
+                `<img class="language-badge" src="${iconPath}" alt="${subject}">`
             )
         }
     })
@@ -82,24 +106,9 @@ const createIcons = (subjects) => {
     return languageBadges.outerHTML
 }
 
-// Функция для получения корректного URL фото
+// Функция для получения корректного URL фото учителя
 const getTeacherPhotoUrl = (photo) => {
-    if (!photo) {
-        return './src/img/uploads/default-teacher.jpg';
-    }
-
-    // Если фото уже содержит полный URL, используем как есть
-    if (photo.startsWith('http')) {
-        return photo;
-    }
-
-    // Если фото начинается с uploads/, добавляем BASE_URL
-    if (photo.startsWith('uploads/')) {
-        return BASE_URL + photo;
-    }
-
-    // Если фото просто имя файла, добавляем путь к uploads
-    return BASE_URL + 'uploads/' + photo;
+    return getCorrectUrl(photo) || './src/img/uploads/default-teacher.jpg';
 }
 
 // Функция создания карточки учителя
@@ -160,9 +169,11 @@ const loadTeachersData = () => {
 
             if (filteredTeachers.length === 0) {
                 // Если учителей не найдено, показываем сообщение
+                const sadImagePath = './src/img/uploads/teacher_not_found.png';
                 teachersCard.innerHTML = `
                     <div class="teacher_sad">
-                        <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель">
+                        <img src="${sadImagePath}" alt="грустный учитель" 
+                             onerror="console.error('Не удалось загрузить изображение: ${sadImagePath}')">
                         <div class="teacher_sad_text">Набор преподавателей на этот курс завершается, <br>скоро мы представим новых специалистов</div>
                     </div>
                 `
@@ -182,9 +193,11 @@ const loadTeachersData = () => {
         .catch(error => {
             console.error('Ошибка загрузки данных:', error)
             // Показываем сообщение об ошибке
+            const sadImagePath = './src/img/uploads/teacher_not_found.png';
             teachersCard.innerHTML = `
                 <div class="teacher_sad">
-                    <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель">
+                    <img src="${sadImagePath}" alt="грустный учитель"
+                         onerror="console.error('Не удалось загрузить изображение: ${sadImagePath}')">
                     <div class="teacher_sad_text">Временно недоступно. Пожалуйста, попробуйте позже.</div>
                 </div>
             `
