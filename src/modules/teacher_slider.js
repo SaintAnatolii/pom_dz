@@ -8,6 +8,8 @@ export const getData = (url) => {
     })
 }
 
+const BASE_URL = 'http://saintdevor.temp.swtest.ru/'; // Оставляем как было
+
 const allSubjects = [
     'Подготовка к школе', 'Начальная школа', 'Русский язык', 'Литература',
     'История', 'Обществознание', 'Окружающий мир', 'Биология', 'География',
@@ -80,17 +82,39 @@ const createIcons = (subjects) => {
     return languageBadges.outerHTML
 }
 
+// Функция для получения корректного URL фото
+const getTeacherPhotoUrl = (photo) => {
+    if (!photo) {
+        return './src/img/uploads/default-teacher.jpg';
+    }
+
+    // Если фото уже содержит полный URL, используем как есть
+    if (photo.startsWith('http')) {
+        return photo;
+    }
+
+    // Если фото начинается с uploads/, добавляем BASE_URL
+    if (photo.startsWith('uploads/')) {
+        return BASE_URL + photo;
+    }
+
+    // Если фото просто имя файла, добавляем путь к uploads
+    return BASE_URL + 'uploads/' + photo;
+}
+
 // Функция создания карточки учителя
 const createTeacherCard = (teacher) => {
     const { id, full_name, subjects, photo } = teacher
 
     const subjectsText = subjects.join(', ')
+    const photoUrl = getTeacherPhotoUrl(photo)
 
     const card = `
     <div class="teacher-card swiper-slide" id="teacher-${id}">
         <div class="teacher-photo">
             ${createIcons(subjects)}
-            <img src=${photo} alt="${full_name}" class="teacher-photo_img">
+            <img src="${photoUrl}" alt="${full_name}" class="teacher-photo_img" 
+                 onerror="this.src='./src/img/uploads/default-teacher.jpg'">
         </div>
         <h2 class="teacher-name">${full_name}</h2>
         <p class="teacher-languages">${subjectsText}</p>
@@ -98,6 +122,18 @@ const createTeacherCard = (teacher) => {
     </div>
     `
     return card
+}
+
+// Функция для предзагрузки фото и обработки ошибок
+const preloadTeacherPhotos = (teachers) => {
+    teachers.forEach(teacher => {
+        const photoUrl = getTeacherPhotoUrl(teacher.photo);
+        const img = new Image();
+        img.src = photoUrl;
+        img.onerror = () => {
+            console.warn(`Фото для учителя ${teacher.full_name} не найдено: ${photoUrl}`);
+        };
+    });
 }
 
 // Основная функция загрузки и отображения данных
@@ -112,13 +148,15 @@ const loadTeachersData = () => {
     // Получаем предмет ТОЛЬКО когда функция вызывается
     const dataSubject = getDataSubject()
 
-    // ИСПРАВЛЕННЫЙ ПУТЬ - используем относительный путь от корня
-    getData('./data.json')
+    getData(BASE_URL + 'api.php?action=teachers')
         .then((teachersData) => {
             teachersCard.textContent = ''
 
             // Фильтруем учителей по предмету, если указан
-            const filteredTeachers = filterTeachersBySubject(teachersData.teachers, dataSubject)
+            const filteredTeachers = filterTeachersBySubject(teachersData, dataSubject)
+
+            // Предзагружаем фото для обработки ошибок
+            preloadTeacherPhotos(filteredTeachers);
 
             if (filteredTeachers.length === 0) {
                 // Если учителей не найдено, показываем сообщение
@@ -146,12 +184,13 @@ const loadTeachersData = () => {
             // Показываем сообщение об ошибке
             teachersCard.innerHTML = `
                 <div class="teacher_sad">
-                    <img src="./uploads/teacher_not_found.png" alt="грустный учитель">
+                    <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель">
                     <div class="teacher_sad_text">Временно недоступно. Пожалуйста, попробуйте позже.</div>
                 </div>
             `
         })
 }
+
 // Функция для показа всех учителей (при клике на кнопку)
 window.loadAllTeachers = () => {
     loadTeachersData()
@@ -185,7 +224,6 @@ const initSwiper = () => {
         }
     })
 }
-
 
 // Инициализация при полной загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {

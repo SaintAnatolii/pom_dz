@@ -1,35 +1,25 @@
 /* Добавляем стили для подложки и запрета скролла */
-.modal-overlay.modal-open {
-    display: flex;
-}
-
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(
-        0,
-        0,
-        0,
-        0.7
-    ); /* Более темная полупрозрачная подложка */
-    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    z-index: 10000; /* Увеличиваем z-index для надежности */
-    backdrop-filter: blur(5px); /* Добавляем размытие фона */
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
 }
-/* Существующие стили */
-.modal_title {
-    color: rgba(255, 255, 255, 1);
-    font-size: 95px;
-    font-weight: 800;
-    line-height: 108px;
-    text-align: center;
-    margin-bottom: 99px;
+
+.modal-overlay.modal-open {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-container {
@@ -44,18 +34,52 @@
     background-repeat: no-repeat;
     padding: 51px 150px;
     position: relative;
+    transform: scale(0.8) translateY(-50px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.modal-overlay.modal-open .modal-container {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal_close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 53px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal_close:hover {
+    transform: scale(1.1);
+    color: #cdff07;
+}
+
+/* Существующие стили */
+.modal_title {
+    color: rgba(255, 255, 255, 1);
+    font-size: 95px;
+    font-weight: 800;
+    line-height: 108px;
+    text-align: center;
+    margin-bottom: 99px;
+}
+
 .modal_form {
     max-width: 608px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
     gap: 20px;
 }
+
 .modal_form_group {
     width: 100%;
 }
+
 .modal_form_group input {
     width: 100%;
     height: 80px;
@@ -68,7 +92,15 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
+    transition: all 0.3s ease;
 }
+
+.modal_form_group input:focus {
+    outline: none;
+    border-color: #cdff07;
+    box-shadow: 0 0 0 3px rgba(205, 255, 7, 0.3);
+}
+
 .modal_btn_submit {
     width: 100%;
     height: 80px;
@@ -80,7 +112,16 @@
     font-size: 24px;
     font-weight: 700;
     line-height: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.modal_btn_submit:hover {
+    background: #b8e600;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(205, 255, 7, 0.4);
+}
+
 .modal_checkbox-container {
     display: flex;
     align-items: baseline;
@@ -91,18 +132,13 @@
     font-weight: 400;
     line-height: 24px;
 }
+
 #privacy {
     width: 16px;
     height: 16px;
-}
-.modal_close {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 53px;
-    color: white;
     cursor: pointer;
 }
+
 @media screen and (max-width: 1600px) {
     .modal_title {
         font-size: 70px;
@@ -115,6 +151,7 @@
         padding: 71px 150px;
     }
 }
+
 /* Адаптив для 1440px */
 @media screen and (max-width: 1440px) {
     .modal-container {
@@ -169,6 +206,7 @@
         gap: 16px;
     }
 }
+
 @media screen and (max-width: 1024px) {
     .modal-overlay {
         padding: 15px;
@@ -181,11 +219,11 @@
         min-height: 500px;
         border-radius: 40px;
         padding: 40px 30px;
-        background-image: none; /* Убираем фоновую картинку */
+        background-image: none;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрируем по горизонтали */
-        justify-content: center; /* Центрируем по вертикали */
+        align-items: center;
+        justify-content: center;
     }
 
     .modal_title {
@@ -201,7 +239,7 @@
         gap: 12px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрируем элементы формы */
+        align-items: center;
     }
 
     .modal_form_group {
@@ -228,7 +266,7 @@
         line-height: 14px;
         padding: 0px 10px;
         max-width: 350px;
-        text-align: center; /* Центрируем текст */
+        text-align: center;
     }
 
     .modal_close {

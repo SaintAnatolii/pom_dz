@@ -81,6 +81,7 @@
   <link rel="stylesheet" href="src/modal.css">
 
   <script src="./src/modules/menu.js" defer></script>
+  <script src="./src/modules/select_teacher.js" defer></script>
 
 </head>
 
@@ -104,7 +105,7 @@
       </nav>
 
       <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="#" class="cta-button">Записаться на 1 урок</a>
+        <a href="#select_teacher" class="cta-button">Записаться на 1 урок</a>
 
         <div class="burger" id="burger">
           <span class="line"></span>
@@ -366,55 +367,25 @@
         </div>
       </section>
 
-      <section class="select_teacher">
+      <section class="select_teacher" id="select_teacher">
         <h2>Репетиторы Помогатора</h2>
 
         <p style="text-align: center; margin-bottom: 20px;">Выберите категорию или посмотрите всех учителей</p>
 
         <div class="categories">
-          <div class="category active">Подготовка, начальные классы</div>
+          <div class="category">Подготовка, начальные классы</div>
           <div class="category">Гуманитарные науки</div>
           <div class="category">Точные науки</div>
           <div class="category">Языки</div>
           <div class="category">Клубы</div>
           <div class="category">ОГЭ</div>
           <div class="category">ЕГЭ</div>
-          <div class="category">Все репетиторы</div>
+          <div class="category active">Все репетиторы</div>
         </div>
 
         <div class="teachers-container">
 
-          <div class="teacher-card">
-
-            <div class="teacher_img">
-              <ul class="teacher_subjects">
-                <li>
-                  <img src="./src/img/classes/active_математика.svg" alt="математика">
-                </li>
-                <li>
-                  <img src="./src/img/classes/active_программирование.svg" alt="программирование">
-                </li>
-              </ul>
-
-              <div class="teacher_photo">
-                <img src="./uploads/image_122.png" alt="фото учителя">
-              </div>
-            </div>
-
-            <div class="teacher_info">
-              <div class="teacher_name">Анастасия</div>
-              <div class="teacher_univercity">Московский государственный педагогический университет </div>
-              <div class="teacher_exp">6 лет репетиторской деятельности</div>
-              <ul class="teacher_subjects_list">
-                <span>Предметы:</span>
-                <li>- математика</li>
-                <li>- информатика</li>
-              </ul>
-              <button class="teacher_submit">Записаться</button>
-            </div>
-
-          </div>
-
+          <!-- render js -->
 
         </div>
       </section>
@@ -722,25 +693,6 @@
     </div>
   </div>
 
-
-  <script>
-    const select_teacher = () => {
-      const tabs = document.querySelectorAll('.category')
-
-      const clearAllTabs = () => {
-        tabs.forEach((tab) => tab.classList.remove('active'))
-      }
-
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          clearAllTabs()
-          tab.classList.add('active')
-        })
-      })
-    }
-
-    select_teacher()
-  </script>
 
 </body>
 
