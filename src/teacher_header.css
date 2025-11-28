@@ -1,13 +1,14 @@
 .teacher_header {
-    width: 1720px;
+    max-width: 100%;
     height: 652px;
     border-radius: 100px;
     box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 1);
     padding: 127px 166px;
     background-position: right bottom;
-    background-size: 565px 593px;
+    background-size: 465px auto;
     background-repeat: no-repeat;
+    margin-top: 20px;
 }
 .teacher_subject {
     max-width: 747px;
@@ -28,4 +29,75 @@
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
+}
+/* Laptop L */
+@media screen and (max-width: 1330px) {
+    .teacher_header {
+        padding: 80px 100px;
+        background-size: 465px auto;
+        height: 540px;
+    }
+    .teacher_subject {
+        font-size: 70px;
+        line-height: 67px;
+    }
+    .teacher_fullname {
+        font-size: 35px;
+    }
+    .teacher_description {
+        max-width: 400px;
+        font-size: 18px;
+    }
+}
+/* Laptop */
+@media screen and (max-width: 920px) {
+    .teacher_header {
+        padding: 20px 70px;
+        max-width: 100%;
+        height: 752px;
+        background-position: center bottom;
+        background-size: 365px auto;
+        background-color: #4527a0;
+        margin-top: 0px;
+        border-radius: 30px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .teacher_subject {
+        font-size: 60px;
+        line-height: 67px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .teacher_fullname {
+        font-size: 25px;
+        color: #d4ff00;
+    }
+    .teacher_description {
+        max-width: 400px;
+        font-size: 16px;
+        color: white;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 500px) {
+    .teacher_header {
+        padding: 20px 30px;
+        max-width: 100%;
+        height: 550px;
+        background-size: 265px auto;
+    }
+    .teacher_subject {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    .teacher_fullname {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .teacher_description {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 }

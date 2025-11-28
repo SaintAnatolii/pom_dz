@@ -1,11 +1,12 @@
 .teacher_info {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 .teacher_info_left,
 .teacher_info_right {
-    width: 841px;
+    width: 49%;
     height: 551px;
     border-radius: 100px;
     background: #f8f9fa;
@@ -21,6 +22,8 @@
     font-size: 32px;
     font-weight: 500;
     line-height: 34px;
+    margin-top: 15px;
+    display: block;
 }
 
 .teacher_info_right {
@@ -40,10 +43,10 @@
 }
 .yellow_layout {
     position: absolute;
-    top: -6px;
-    left: 1px;
+    top: 1%;
+    left: 1%;
     width: 51%;
-    height: 100%;
+    height: 98%;
     z-index: 1;
     background-color: rgb(255, 225, 0);
     box-shadow: none !important;
@@ -51,9 +54,367 @@
 }
 .mask {
     position: absolute;
-    top: -5px;
-    left: -5px;
+    top: -1%;
+    left: -1%;
     width: 102%;
     height: 115%;
     z-index: 2;
+}
+
+@media screen and (max-width: 1600px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 450px;
+        border-radius: 80px;
+        padding: 60px 100px;
+    }
+
+    .teacher_row {
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 50px;
+    }
+
+    .teacher_row span {
+        font-size: 28px;
+        line-height: 30px;
+        margin-top: 12px;
+    }
+
+    .stars {
+        width: 500px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 400px;
+        border-radius: 70px;
+        padding: 50px 80px;
+    }
+
+    .teacher_row {
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 40px;
+    }
+
+    .teacher_row span {
+        font-size: 24px;
+        line-height: 26px;
+        margin-top: 10px;
+    }
+
+    .stars {
+        width: 450px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 380px;
+        border-radius: 65px;
+        padding: 45px 70px;
+    }
+
+    .teacher_row {
+        font-size: 22px;
+        line-height: 24px;
+        margin-bottom: 35px;
+    }
+
+    .teacher_row span {
+        font-size: 22px;
+        line-height: 24px;
+        margin-top: 8px;
+    }
+
+    .stars {
+        width: 420px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 350px;
+        border-radius: 60px;
+        padding: 40px 60px;
+    }
+
+    .teacher_row {
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 30px;
+    }
+
+    .teacher_row span {
+        font-size: 20px;
+        line-height: 22px;
+        margin-top: 8px;
+    }
+
+    .stars {
+        width: 380px;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 320px;
+        border-radius: 55px;
+        padding: 35px 50px;
+    }
+
+    .teacher_row {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 25px;
+    }
+
+    .teacher_row span {
+        font-size: 18px;
+        line-height: 20px;
+        margin-top: 6px;
+    }
+
+    .stars {
+        width: 350px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 300px;
+        border-radius: 50px;
+        padding: 30px 40px;
+    }
+
+    .teacher_row {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .teacher_row span {
+        font-size: 16px;
+        line-height: 18px;
+        margin-top: 5px;
+    }
+
+    .stars {
+        width: 320px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .teacher_info {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 280px;
+        border-radius: 45px;
+        padding: 35px 35px;
+        box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .teacher_row {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 18px;
+    }
+
+    .teacher_row span {
+        font-size: 15px;
+        line-height: 17px;
+        margin-top: 4px;
+    }
+
+    .stars {
+        width: 300px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 200px;
+        border-radius: 40px;
+        padding: 30px 30px;
+    }
+
+    .teacher_row {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 15px;
+    }
+
+    .teacher_row span {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 4px;
+    }
+
+    .stars {
+        width: 280px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 830px) {
+    .teacher_info_left,
+    .teacher_info_right {
+        height: 180px;
+        border-radius: 35px;
+        padding: 26px 25px;
+    }
+
+    .teacher_row {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 12px;
+    }
+
+    .teacher_row span {
+        font-size: 13px;
+        line-height: 15px;
+        margin-top: 3px;
+    }
+
+    .stars {
+        width: 250px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .teacher_info {
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
+
+    .teacher_info_left,
+    .teacher_info_right {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .teacher_info_left {
+        height: 200px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .teacher_info_right {
+        height: 100px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: 1px solid #4527a0;
+    }
+
+    .teacher_row {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 10px;
+    }
+
+    .teacher_row span {
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 3px;
+    }
+
+    .stars {
+        width: 230px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .teacher_info_left {
+        height: 150px;
+        padding: 20px 35px;
+    }
+
+    .teacher_info_right {
+        height: 90px;
+        padding: 12px 15px;
+    }
+
+    .teacher_row {
+        font-size: 12px;
+        line-height: 13px;
+        margin-bottom: 8px;
+    }
+
+    .teacher_row span {
+        font-size: 12px;
+        line-height: 13px;
+        margin-top: 2px;
+    }
+
+    .stars {
+        width: 200px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .teacher_info_left {
+        height: 150px;
+        padding: 10px 30px;
+    }
+
+    .teacher_info_right {
+        height: 80px;
+    }
+
+    .stars {
+        width: 180px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .teacher_info_left {
+        height: 140px;
+    }
+
+    .teacher_info_right {
+        height: 70px;
+        padding: 8px 10px;
+    }
+
+    .stars {
+        width: 150px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .teacher_info_left {
+        height: 130px;
+        padding: 6px 8px;
+    }
+
+    .teacher_info_right {
+        height: 65px;
+        padding: 6px 8px;
+    }
+
+    .stars {
+        width: 130px;
+        height: 22px;
+    }
 }
