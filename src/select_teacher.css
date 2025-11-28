@@ -369,7 +369,7 @@
     }
 }
 
-@media (max-width: 1660px) {
+/* @media (max-width: 1660px) {
     .teacher_img {
         width: 48%;
         height: 490px;
@@ -390,10 +390,10 @@
         font-size: 16px;
         margin-bottom: 30px;
     }
-}
+} */
 
 /* Адаптивность для Grid */
-@media (max-width: 1400px) {
+@media (max-width: 1660px) {
     .teachers-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;

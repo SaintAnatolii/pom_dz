@@ -127,7 +127,7 @@ const createTeacherCard = (teacher) => {
         </div>
         <h2 class="teacher-name">${full_name}</h2>
         <p class="teacher-languages">${subjectsText}</p>
-        <a href="#" class="profile-btn" style="background-color: var(--main_color_page);">В профиль</a>
+        <a href="/teacher_profile.html" class="profile-btn" style="background-color: var(--main_color_page);">В профиль</a>
     </div>
     `
     return card
