@@ -1,0 +1,336 @@
+/* Родительский контейнер для центрирования */
+.contact-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Основной контейнер формы */
+.contact-container {
+    width: 100%;
+    max-width: 1720px;
+    min-height: 900px;
+    border-radius: 100px;
+    box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(77, 37, 235, 1);
+    background-image: url(./img/modal/1.png);
+    background-position: right bottom;
+    background-size: 678px 704px;
+    background-repeat: no-repeat;
+    padding: 51px 150px;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* Для плавного появления */
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+
+/* Заголовок */
+.modal_title {
+    color: rgba(255, 255, 255, 1);
+    font-size: 95px;
+    font-weight: 800;
+    line-height: 108px;
+    text-align: center;
+    margin-bottom: 99px;
+}
+
+/* Форма */
+.modal_form {
+    max-width: 608px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Группы формы */
+.modal_form_group {
+    width: 100%;
+}
+
+.modal_form_group input {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    border: 1px solid rgba(208, 208, 208, 1);
+    border-radius: 40.5px;
+    background: rgba(255, 255, 255, 1);
+    padding-left: 30px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    transition: all 0.3s ease;
+}
+
+.modal_form_group input:focus {
+    outline: none;
+    border-color: #cdff07;
+    box-shadow: 0 0 0 3px rgba(205, 255, 7, 0.3);
+}
+
+/* Кнопка отправки */
+.modal_btn_submit {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 40.5px;
+    background: #cdff07;
+    color: rgba(32, 32, 32, 1);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal_btn_submit:hover {
+    background: #b8e600;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(205, 255, 7, 0.4);
+}
+
+/* Чекбокс и согласие */
+.modal_checkbox-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+#privacy {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Медиазапрос для 1600px */
+@media screen and (max-width: 1600px) {
+    .modal_title {
+        font-size: 70px;
+        margin-bottom: 61px;
+    }
+
+    .contact-container {
+        min-height: 800px;
+        background-size: 610.2px 633.6px;
+        padding: 71px 100px;
+        max-width: 1400px;
+    }
+}
+
+/* Медиазапрос для 1440px */
+@media screen and (max-width: 1440px) {
+    .contact-container {
+        min-height: 670px;
+        border-radius: 70px;
+        padding: 50px 80px;
+        background-size: 473px 492px;
+        max-width: 1200px;
+    }
+
+    .modal_title {
+        font-size: 65px;
+        line-height: 75px;
+        margin-bottom: 69px;
+    }
+
+    .modal_form {
+        max-width: 524px;
+        gap: 16px;
+    }
+
+    .modal_form_group input {
+        height: 55px;
+        border-radius: 33px;
+        font-size: 18px;
+        padding-left: 25px;
+    }
+
+    .modal_btn_submit {
+        height: 55px;
+        border-radius: 33px;
+        font-size: 20px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 16px;
+        padding: 0px 16px;
+        line-height: 17px;
+    }
+}
+
+/* Медиазапрос для 1220px */
+@media screen and (max-width: 1220px) {
+    .contact-container {
+        padding: 50px 60px;
+        max-width: 1000px;
+    }
+
+    .modal_form {
+        max-width: 500px;
+        gap: 16px;
+    }
+}
+
+/* Медиазапрос для 1024px */
+@media screen and (max-width: 1024px) {
+    .contact-section {
+        padding: 15px;
+    }
+
+    .contact-container {
+        width: 100%;
+        max-width: 800px;
+        min-height: 600px;
+        border-radius: 40px;
+        padding: 40px 50px;
+        background-size: 400px 416px;
+    }
+
+    .modal_title {
+        font-size: 42px;
+        line-height: 46px;
+        margin-bottom: 40px;
+    }
+
+    .modal_form {
+        max-width: 400px;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .modal_form_group {
+        width: 100%;
+    }
+
+    .modal_form_group input {
+        height: 50px;
+        border-radius: 25px;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .modal_btn_submit {
+        height: 50px;
+        border-radius: 25px;
+        font-size: 18px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 14px;
+        line-height: 16px;
+        padding: 0px 10px;
+    }
+}
+
+/* Медиазапрос для 768px */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding: 40px 30px;
+        border-radius: 30px;
+        background-image: none;
+        min-height: 550px;
+    }
+
+    .modal_title {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+
+    .modal_form {
+        max-width: 100%;
+    }
+
+    .modal_form_group input {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .modal_btn_submit {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 13px;
+        line-height: 15px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/* Медиазапрос для 480px */
+@media screen and (max-width: 480px) {
+    .contact-section {
+        padding: 10px;
+    }
+
+    .contact-container {
+        padding: 30px 20px;
+        border-radius: 25px;
+        min-height: 500px;
+    }
+
+    .modal_title {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 25px;
+    }
+
+    .modal_form_group input {
+        height: 45px;
+        font-size: 14px;
+        padding-left: 18px;
+    }
+
+    .modal_btn_submit {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 0;
+    }
+}
+
+/* Медиазапрос для очень маленьких экранов */
+@media screen and (max-width: 360px) {
+    .contact-container {
+        padding: 20px 15px;
+        border-radius: 20px;
+    }
+
+    .modal_title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .modal_form_group input {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .modal_btn_submit {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .modal_checkbox-container {
+        font-size: 11px;
+    }
+}

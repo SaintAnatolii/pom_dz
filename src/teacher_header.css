@@ -4,11 +4,17 @@
     border-radius: 100px;
     box-shadow: 0px 40px 60px 0px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 1);
-    padding: 127px 166px;
+    padding: 60px 166px;
     background-position: right bottom;
     background-size: 465px auto;
     background-repeat: no-repeat;
     margin-top: 20px;
+}
+.icons-row {
+    display: flex;
+    max-width: 320px;
+    margin-bottom: 20px;
+    gap: 15px;
 }
 .teacher_subject {
     max-width: 747px;
@@ -84,7 +90,7 @@
     .teacher_header {
         padding: 20px 30px;
         max-width: 100%;
-        height: 550px;
+        height: 650px;
         background-size: 265px auto;
     }
     .teacher_subject {

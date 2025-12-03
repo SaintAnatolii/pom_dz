@@ -73,7 +73,7 @@
   <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="src/header-menu.css">
   <link rel="stylesheet" href="src/footer.css">
-  <link rel="stylesheet" href="src/modal.css">
+  <link rel="stylesheet" href="src/teacher_profile_form.css">
   <link rel="stylesheet" href="src/teacher_header.css">
   <link rel="stylesheet" href="src/teacher_information.css">
   <link rel="stylesheet" href="src/reviews-section.css">
@@ -85,7 +85,8 @@
   <script src="./src/modules/menu.js" defer></script>
   <script src="./src/modules/reviews.js" defer></script>
   <script src="./src/modules/accordion.js" defer></script>
-  <script src="./src/modules/teacher_slider.js" defer></script>
+  <script src="./src/modules/teacher_slider_profile.js" defer></script>
+  <script src="./src/modules/teacherProfile.js" defer></script>
 
 </head>
 
@@ -333,8 +334,11 @@
 
       <section class="teacher_header" style="background-image: url('./uploads/placeholder.png');">
         <!-- <section class="teacher_header" style="background-image: url('./src/img/uploads/image_119.png');"> -->
-        <div class="teacher_subject">Репетитор
-          по математике</div>
+        <div class="teacher_subject">Репетитор</div>
+
+        <div class="icons-row">
+          <!-- js render -->
+        </div>
         <div class="teacher_fullname">София Иванова</div>
         <div class="teacher_description">индивидуальные и групповые занятия по математики, для начальных классов и
           учеников 9-11 классов. </div>
@@ -344,15 +348,15 @@
         <div class="teacher_info_left">
           <div class="teacher_row">
             Образование:<br>
-            <span>Московский институт математики </span>
+            <span id="education">Московский институт математики </span>
           </div>
           <div class="teacher_row">
             Дополнительно:<br>
-            <span>Повышение квалификации в сфере образования</span>
+            <span id="description">Повышение квалификации в сфере образования</span>
           </div>
           <div class="teacher_row">
             Репетиторский опыт:<br>
-            <span>5 лет +</span>
+            <span id="experience">5 лет +</span>
           </div>
         </div>
 
@@ -385,33 +389,34 @@
       </section>
 
 
-      <!-- <section class="modal-container" style="margin: 0 auto; opacity: 1;">
-        <h2 class="modal_title">Запись на пробное занятие</h2>
-        <form class="modal_form">
-          <div class="modal_form_group">
-            <input type="text" name="teacher" value="Анастасия - математика, информатика" required>
-          </div>
-          <div class="modal_form_group">
-            <input type="text" name="firstname" placeholder="Ваше имя" required>
-          </div>
-          <div class="modal_form_group">
-            <input type="tel" name="phone" placeholder="Ваш номер" required>
-          </div>
-
-          <div class="modal_form_group">
-            <input type="email" name="email" placeholder="Ваш email" required>
-          </div>
-
-          <button type="submit" class="modal_btn_submit">Записаться на
-            занятие</button>
-          <div class="modal_checkbox-container">
-            <input type="checkbox" id="privacy" required>
-            <label for="privacy">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
-              информация по обработке персональных данных согласно Российского законодательства</label>
-          </div>
-        </form>
-
-      </section> -->
+      <section class="contact-section">
+        <div class="contact-container">
+          <h2 class="modal_title">Запись на пробное занятие</h2>
+          <form class="modal_form">
+            <div class="modal_form_group">
+              <input type="text" id="teacher_form" name="teacher" value="Анастасия - математика, информатика" required>
+            </div>
+            <div class="modal_form_group">
+              <input type="text" name="firstname" placeholder="Ваше имя" required>
+            </div>
+            <div class="modal_form_group">
+              <input type="tel" name="phone" placeholder="Ваш номер" required>
+            </div>
+            <div class="modal_form_group">
+              <input type="email" name="email" placeholder="Ваш email" required>
+            </div>
+            <button type="submit" class="modal_btn_submit">Записаться на занятие</button>
+            <div class="modal_checkbox-container">
+              <input type="checkbox" id="privacy" required>
+              <label for="privacy">
+                Я согласен (на) на обработку персональных данных<br>
+                Техническая и юридическая информация по обработке персональных данных согласно Российского
+                законодательства
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
 
 
 

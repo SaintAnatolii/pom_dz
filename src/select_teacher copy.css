@@ -114,15 +114,15 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Исправляем высоту фото контейнера */
+/* Анимация фото учителя */
 .teacher_img {
     width: 360px;
-    height: 100%; /* фиксированная высота как у исходных фото */
+    height: 537px;
     border-radius: 50px;
     background: rgba(249, 249, 249, 1);
     position: relative;
     display: flex;
-    align-items: flex-end; /* прижимаем содержимое к низу */
+    align-items: flex-end;
     justify-content: center;
     transition: all 0.4s ease;
     overflow: hidden;
@@ -137,21 +137,7 @@
     );
 }
 
-/* Фото занимает всю доступную высоту снизу */
-.teacher_photo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end; /* прижимаем фото к низу */
-    justify-content: center;
-}
-
 .teacher_photo img {
-    height: 100%; /* занимает всю высоту контейнера */
-    width: auto;
-    max-width: 100%;
-    object-fit: cover; /* заполняем контейнер сохраняя пропорции */
-    object-position: bottom; /* выравниваем по низу */
     transition: all 0.4s ease;
     filter: grayscale(0.1);
 }
@@ -170,7 +156,6 @@
     top: 30px;
     left: 30px;
     transition: all 0.3s ease;
-    z-index: 2;
 }
 
 .teacher-card:hover .teacher_subjects {
@@ -189,19 +174,16 @@
     filter: drop-shadow(0 5px 10px rgba(77, 37, 235, 0.3));
 }
 
-/* Исправляем высоту карточки информации */
+/* Анимация блока информации */
 .teacher_info {
     width: 430px;
-    min-height: 537px; /* совпадает с высотой фото */
-    height: auto;
+    height: 536px;
     border-radius: 50px;
     background: rgba(237, 235, 255, 1);
     padding: 52px;
     transition: all 0.4s ease;
     position: relative;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 }
 
 .teacher-card:hover .teacher_info {
@@ -234,12 +216,6 @@
 
 .teacher-card:hover::before {
     opacity: 1;
-}
-
-/* Контейнер для контента */
-.teacher_content {
-    flex: 1;
-    margin-bottom: 20px;
 }
 
 /* Анимация текста в карточке */
@@ -307,8 +283,6 @@
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
-    margin-top: auto;
-    align-self: flex-start;
 }
 
 /* Анимация при наведении на кнопку */
@@ -395,6 +369,29 @@
     }
 }
 
+/* @media (max-width: 1660px) {
+    .teacher_img {
+        width: 48%;
+        height: 490px;
+    }
+    .teacher_info {
+        width: 48%;
+        height: 490px;
+        padding: 40px;
+    }
+    .teacher_name {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 56px;
+        margin-bottom: 15px;
+    }
+    .teacher_univercity,
+    .teacher_exp {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+} */
+
 /* Адаптивность для Grid */
 @media (max-width: 1660px) {
     .teachers-container {
@@ -410,13 +407,15 @@
 
     .teacher_img {
         width: 280px;
-        height: 100%;
+        height: 450px;
+    }
+    .teacher_photo img {
+        width: 100%;
     }
 
     .teacher_info {
         width: 280px;
-        min-height: 450px;
-        height: auto;
+        height: 450px;
         padding: 35px;
     }
 
@@ -488,13 +487,12 @@
 
     .teacher_img {
         width: 220px;
-        height: 100%;
+        height: 380px;
     }
 
     .teacher_info {
         width: 220px;
-        min-height: 380px;
-        height: auto;
+        height: 380px;
         padding: 25px;
     }
 
@@ -558,13 +556,12 @@
 
     .teacher_img {
         width: 280px;
-        height: 100%;
+        height: 420px;
     }
 
     .teacher_info {
         width: 280px;
-        min-height: 420px;
-        height: auto;
+        height: 420px;
         padding: 30px;
     }
 
@@ -625,14 +622,13 @@
 
     .teacher_img {
         width: 45%;
-        height: 100%;
+        height: 320px;
         border-radius: 30px;
     }
 
     .teacher_info {
         width: 52%;
-        min-height: 320px;
-        height: auto;
+        height: 320px;
         padding: 20px;
         border-radius: 30px;
     }
@@ -705,14 +701,13 @@
 
     .teacher_img {
         width: 45%;
-        height: 100%;
+        height: 280px;
         border-radius: 25px;
     }
 
     .teacher_info {
         width: 52%;
-        min-height: 280px;
-        height: auto;
+        height: 280px;
         padding: 15px;
         border-radius: 25px;
     }
