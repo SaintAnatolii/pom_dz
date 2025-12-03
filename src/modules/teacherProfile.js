@@ -67,6 +67,30 @@ const formatTeacherDescription = (teacherData) => {
 };
 
 
+// Функция для получения корректного URL
+const getCorrectUrl = (path) => {
+    if (!path) return './src/img/uploads/default-teacher.jpg';
+
+    // Если путь уже полный URL, возвращаем как есть
+    if (path.startsWith('http')) {
+        return path;
+    }
+
+    // Если путь начинается с site/uploads/, добавляем BASE_URL
+    if (path.startsWith('site/uploads/')) {
+        return BASE_URL + path;
+    }
+
+    // Если путь начинается с uploads/, добавляем BASE_URL
+    if (path.startsWith('uploads/')) {
+        return BASE_URL + path;
+    }
+
+    // Для локальных путей возвращаем как есть (относительные пути)
+    return path;
+}
+
+
 
 const teacherProfile = () => {
 
