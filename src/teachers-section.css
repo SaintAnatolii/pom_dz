@@ -135,6 +135,17 @@
     font-size: 40px;
 }
 
+/* .swiper-wrapper.centered {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} */
+
+/* Для одного слайда
+.swiper-slide:only-child {
+    margin: 0 auto !important;
+} */
+
 /* Адаптив */
 
 /* Laptop L */
@@ -269,6 +280,10 @@
     .teacher_sad_text {
         font-size: 16px;
     }
+
+    /* .teachers-swiper .swiper-wrapper {
+        justify-content: center !important;
+    } */
 }
 
 /* Mobile L */

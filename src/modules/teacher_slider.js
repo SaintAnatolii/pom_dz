@@ -238,6 +238,28 @@ const initSwiper = () => {
     })
 }
 
+const centerSwiperSlides = () => {
+    const wrapper = document.querySelector('.swiper-wrapper');
+    const slides = document.querySelectorAll('.swiper-slide');
+
+    if (!wrapper || slides.length === 0) return;
+
+    // Если слайдов меньше 3, центрируем
+    if (slides.length < 3) {
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+        wrapper.style.alignItems = 'center';
+
+        // Принудительная ширина для центрирования
+        slides.forEach(slide => {
+            slide.style.margin = '0 auto';
+        });
+    }
+};
+
+// Вызывайте эту функцию после initSwiper()
+setTimeout(centerSwiperSlides, 200);
+
 // Инициализация при полной загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {
     loadTeachersData()

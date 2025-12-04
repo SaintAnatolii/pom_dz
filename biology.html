@@ -109,6 +109,7 @@
   <script type="module" src="src/modules/reviews.js" defer></script>
   <script type="module" src="src/modules/teacher_slider.js" defer></script>
   <script type="module" src="src/modules/steps.js" defer></script>
+  <script type="module" src="src/modules/form-handler.js" defer></script>
 
   <!-- CSS переменные для цветов -->
   <style>
@@ -396,18 +397,21 @@
             <h3 class="banner_form_title banner_title_white ">
               Запишитесь на пробное занятие
             </h3>
-            <form class="banner_form">
+            <form class="banner_form" id="main-form">
               <div class="banner_form_group">
                 <img src="./src/img/page8/banner.png" class="banner_image_main_mobile"
                   alt="Ребенок занимается подготовкой к школе с репетитором" loading="lazy">
-                <input type="text" name="firstname" id="" placeholder="Ваше имя" required>
+                <input type="text" name="firstname" placeholder="Ваше имя" required>
               </div>
               <div class="banner_form_group">
-                <input type="tel" name="phone" id="" placeholder="Ваш номер" required>
+                <input type="tel" name="phone" placeholder="Ваш номер" required>
+              </div>
+              <div class="banner_form_group">
+                <input type="hidden" name="teacher" value="Подобрать учителя по Биологии" required>
               </div>
 
               <div class="banner_form_group">
-                <input type="email" name="email" id="" placeholder="Ваш email" required>
+                <input type="email" name="email" placeholder="Ваш email" required>
               </div>
 
               <button type="submit" class="submit_btn">Записаться на занятие</button>
@@ -615,26 +619,29 @@
         <div class="contact_form_wrapper">
 
           <div class="banner_form_section">
-            <form class="banner_form">
+            <form class="banner_form" id="sub-form">
               <div class="banner_form_group">
                 <div class="contact_form_main_image mobile">
                   <img src="src/img/page8/contact.png" alt="Школьный портфель">
                 </div>
-                <input type="text" name="firstname" id="" placeholder="Ваше имя" required>
+                <input type="text" name="firstname" placeholder="Ваше имя" required>
               </div>
               <div class="banner_form_group">
-                <input type="tel" name="phone" id="" placeholder="Ваш номер" required>
+                <input type="tel" name="phone" placeholder="Ваш номер" required>
+              </div>
+              <div class="banner_form_group">
+                <input type="hidden" name="teacher" value="Подобрать учителя по Биологии" required>
               </div>
 
               <div class="banner_form_group">
-                <input type="email" name="email" id="" placeholder="Ваш email" required>
+                <input type="email" name="email" placeholder="Ваш email" required>
               </div>
 
               <button type="submit" class="submit_btn">Записаться на
                 занятие</button>
               <div class="checkbox-container">
-                <input type="checkbox" id="privacy" required>
-                <label for="privacy">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
+                <input type="checkbox" id="privacy1" required>
+                <label for="privacy1">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
                   информация по обработке персональных данных согласно Российского законодательства</label>
               </div>
             </form>

@@ -1,3 +1,71 @@
 User-agent: *
 Allow: /
+
+# Карта сайта
 Sitemap: https://pomogatordz.ru/sitemap.xml
+
+# Запрещаем доступ к служебным директориям и файлам
+Disallow: /node_modules/
+Disallow: /phpmailer/
+Disallow: /templates/
+Disallow: /src/
+Disallow: /uploads/
+Disallow: /*.php$
+Disallow: /*.json$
+Disallow: /*.txt$
+Disallow: /*.md$
+
+# Разрешаем индексацию основных страниц
+Allow: /*.html$
+
+# Разрешаем доступ к статическим ресурсам
+Allow: /public/
+Allow: /img/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+
+# Указываем хоста для Яндекс
+Host: pomogatordz.ru
+
+# Указываем хоста для Google (если нужно)
+# Host: https://pomogatordz.ru
+
+# Задержка между запросами (в секундах)
+Crawl-delay: 1
+
+# Яндекс-специфичные директивы
+User-agent: Yandex
+Allow: /
+Clean-param: ref /teachers.html
+Clean-param: utm_source&utm_medium&utm_campaign /
+
+# Google-специфичные директивы
+User-agent: Googlebot
+Allow: /
+Disallow: /search
+
+# Боты социальных сетей
+User-agent: FacebookExternalHit
+Allow: /
+Crawl-delay: 2
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 2
+
+# Запрещаем ботов-сканеров уязвимостей
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /

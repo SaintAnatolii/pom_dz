@@ -82,6 +82,7 @@
 
   <script src="./src/modules/menu.js" defer></script>
   <script src="./src/modules/select_teacher.js" defer></script>
+  <script src="./src/modules/form-handler.js" defer></script>
 
 </head>
 
@@ -481,15 +482,18 @@
 
         <div class="first_bottom">
 
-          <form class="form-container">
+          <form class="form-container" id="sub-form">
             <div class="form-group">
-              <input type="text" placeholder="Ваше имя" required>
+              <input type="text" name="firstname" placeholder="Ваше имя" required>
             </div>
             <div class="form-group">
-              <input type="tel" placeholder="Ваш номер" required>
+              <input type="tel" name="phone" placeholder="Ваш номер" required>
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Ваш email" required>
+              <input type="email" name="email" placeholder="Ваш email" required>
+            </div>
+            <div class="form-group">
+              <input type="hidden" name="teacher" value="Подобрать учителя по Шахматам" required>
             </div>
             <button type="submit" class="submit-button">Оставить заявку</button>
             <div class="checkbox-container">
@@ -664,7 +668,7 @@
         &#10006;
       </div>
       <h2 class="modal_title">Запись на пробное занятие</h2>
-      <form class="modal_form">
+      <form class="modal_form" id="main-form">
         <div class="modal_form_group">
           <!-- <img src="./src/ class=" banner_image_main_mobile" alt="Ребенок занимается подготовкой к школе с репетитором"
             loading="lazy"> -->
@@ -684,8 +688,8 @@
         <button type="submit" class="modal_btn_submit">Записаться на
           занятие</button>
         <div class="modal_checkbox-container">
-          <input type="checkbox" id="privacy" required>
-          <label for="privacy">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
+          <input type="checkbox" id="privacy1" required>
+          <label for="privacy1">Я согласен (на) на обработку персональных данных<br>Техническая и юридическая
             информация по обработке персональных данных согласно Российского законодательства</label>
         </div>
       </form>

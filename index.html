@@ -220,6 +220,7 @@
   <script type="module" src="src/modules/find.js" defer></script>
   <script type="module" src="src/modules/reviews.js" defer></script>
   <script type="module" src="src/modules/teacher_slider.js" defer></script>
+  <script type="module" src="src/modules/form-handler.js" defer></script>
 
   <!-- Yandex.Metrika counter -->
   <!-- <script type="text/javascript">
@@ -503,7 +504,10 @@
             <h1><span>Онлайн помощь</span> с выполнением домашних заданий</h1>
             <p>Запишитесь на бесплатную консультацию и узнайте, как мы можем помочь!</p>
 
-            <form class="form-container">
+            <form class="form-container" id="main-form">
+              <div class="form-group">
+                <input type="hidden" name="teacher" value="проконсультировать" required>
+              </div>
               <div class="form-group">
                 <div class="image_mobile">
                   <img src="./src/img/header/hero2.png" alt="Студентка помогает с домашними заданиями"
@@ -514,10 +518,13 @@
                   <img src="./src/img/form/36.svg" alt="репетитор" class="image_dec_4">
                 </div>
 
-                <input type="text" placeholder="Ваше имя" required>
+                <input type="text" name="firstname" placeholder="Ваше имя" required>
               </div>
               <div class="form-group">
-                <input type="tel" placeholder="Ваш номер" required>
+                <input type="tel" name="phone" placeholder="Ваш номер" required>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" class="form-input" placeholder="Ваш email" required>
               </div>
               <button type="submit" class="submit-button">Оставить заявку</button>
               <div class="checkbox-container">
@@ -1744,17 +1751,21 @@
         <div class="contact_wrapper">
 
           <div class="form-container">
-            <form>
+            <form id="sub-form">
+
               <div class="form-group">
-                <input type="text" class="form-input" placeholder="Ваше имя" required>
+                <input type="hidden" name="teacher" value="проконсультировать" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="firstname" class="form-input" placeholder="Ваше имя" required>
               </div>
 
               <div class="form-group">
-                <input type="tel" class="form-input" placeholder="Ваш номер" required>
+                <input type="tel" name="phone" class="form-input" placeholder="Ваш номер" required>
               </div>
 
               <div class="form-group">
-                <input type="email" class="form-input" placeholder="Ваш email" required>
+                <input type="email" name="email" class="form-input" placeholder="Ваш email" required>
               </div>
 
               <button type="submit" class="submit-btn">Оставить заявку</button>

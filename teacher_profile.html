@@ -88,6 +88,7 @@
   <script src="./src/modules/accordion.js" defer></script>
   <script src="./src/modules/teacher_slider_profile.js" defer></script>
   <script src="./src/modules/teacherProfile.js" defer></script>
+  <script src="./src/modules/form-handler.js" defer></script>
   <style>
     :root {
       --main_color_page: #4d25eb;
@@ -339,7 +340,6 @@
     <div class="container">
 
       <section class="teacher_header" style="background-image: url('./uploads/placeholder.png');">
-        <!-- <section class="teacher_header" style="background-image: url('./src/img/uploads/image_119.png');"> -->
         <div class="teacher_subject">Репетитор</div>
 
         <div class="icons-row">
@@ -398,7 +398,7 @@
       <section class="contact-section">
         <div class="contact-container">
           <h2 class="modal_title">Запись на пробное занятие</h2>
-          <form class="modal_form">
+          <form class="modal_form" id="main-form">
             <div class="modal_form_group">
               <input type="text" id="teacher_form" name="teacher" value="Анастасия - математика, информатика" required>
             </div>
@@ -427,7 +427,7 @@
 
 
       <section class="teachers">
-        <div class="teacher-title">Ваш ребенок в надежных руках</div>
+        <div class="teacher-title">Другие репетиторы</div>
 
         <div class="swiper teachers-swiper">
           <div class="teacher-cards swiper-wrapper">
@@ -600,11 +600,6 @@
 
 
   </footer>
-
-  <div class="modal-overlay">
-
-  </div>
-
 
 </body>
 

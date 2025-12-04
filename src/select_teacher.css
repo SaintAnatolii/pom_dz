@@ -244,9 +244,9 @@
 
 /* Анимация текста в карточке */
 .teacher_name {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 42px;
     margin-bottom: 23px;
     transition: all 0.3s ease;
 }

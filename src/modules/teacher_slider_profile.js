@@ -73,7 +73,7 @@ const teacher_profile_slider = async () => {
         return languageBadges.outerHTML;
     };
 
-    // Функция создания карточки учителя
+    // Функция создания карточки учителя (адаптированная под ваши стили)
     const createTeacherCard = (teacher) => {
         const { id, full_name, subjects = [], photo } = teacher;
         const subjectsText = subjects.join(', ');
@@ -94,130 +94,63 @@ const teacher_profile_slider = async () => {
         `;
     };
 
-    // Диагностика DOM перед инициализацией Swiper
-    const debugDOM = () => {
-        const wrapper = document.querySelector('.swiper-wrapper');
-        const slides = document.querySelectorAll('.swiper-slide');
-
-        console.log('=== SWIPER DEBUG ===');
-        console.log('Wrapper found:', !!wrapper);
-        console.log('Number of slides:', slides.length);
-
-        if (wrapper) {
-            console.log('Wrapper CSS:', window.getComputedStyle(wrapper));
-            console.log('Wrapper display:', wrapper.style.display);
-            console.log('Wrapper flexDirection:', wrapper.style.flexDirection);
-        }
-
-        slides.forEach((slide, index) => {
-            console.log(`Slide ${index}:`, window.getComputedStyle(slide));
-        });
-    };
-
-    // Инициализация Swiper
+    // Инициализация Swiper - УПРОЩЕННАЯ версия, как в teacher_slider.js
     const initSwiper = () => {
         const swiperElement = document.querySelector('.teachers-swiper');
         if (!swiperElement) {
-            console.error('Swiper элемент .teachers-swiper не найден!');
-            return null;
+            console.error('Swiper элемент не найден!');
+            return;
         }
-
-        // Проверяем, есть ли слайды
-        const slides = document.querySelectorAll('.swiper-slide');
-        if (slides.length === 0) {
-            console.error('Слайды не найдены!');
-            return null;
-        }
-
-        console.log('Инициализация Swiper с', slides.length, 'слайдами');
 
         // Уничтожаем предыдущий экземпляр Swiper, если он существует
         if (window.teachersSwiper) {
             window.teachersSwiper.destroy(true, true);
-            window.teachersSwiper = null;
         }
 
-        // Инициализируем новый Swiper с правильными настройками
+        // Используем ТЕ ЖЕ настройки, что и в teacher_slider.js
         window.teachersSwiper = new Swiper('.teachers-swiper', {
-            // Обязательные параметры
-            slidesPerView: 'auto', // Автоматическое определение видимых слайдов
-            spaceBetween: 20,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
             speed: 600,
 
-            // Важно: отключаем вертикальное выравнивание
-            direction: 'horizontal',
-
-            // Центрирование активного слайда
-            centeredSlides: true,
-
-            // Параметры для лучшего отображения
-            freeMode: false,
-            watchSlidesProgress: true,
-            watchOverflow: true,
-
-            // Автовысота
-            autoHeight: false,
-
-            // Настройки для слайдов
-            slideToClickedSlide: false,
-            loop: false,
-
-            // Брейкпоинты для адаптивности
+            // Адаптивные настройки
             breakpoints: {
-                320: {
-                    spaceBetween: 10,
+                375: {
+                    spaceBetween: 0,
                     slidesPerView: 1,
                     centeredSlides: false
                 },
-                480: {
-                    spaceBetween: 10,
-                    slidesPerView: 1.2,
-                    centeredSlides: true
+                425: {
+                    spaceBetween: 0,
+                    slidesPerView: 1,
+                    centeredSlides: false
                 },
                 768: {
-                    spaceBetween: 15,
+                    spaceBetween: 5,
                     slidesPerView: 2,
                     centeredSlides: true
                 },
                 1024: {
-                    spaceBetween: 20,
+                    spaceBetween: 30,
                     slidesPerView: 3,
                     centeredSlides: true
                 },
-                1200: {
-                    spaceBetween: 25,
+                1440: {
+                    spaceBetween: 40,
                     slidesPerView: 4,
                     centeredSlides: true
-                }
-            },
-
-            // События для отладки
-            on: {
-                init: function () {
-                    console.log('Swiper инициализирован');
-                    console.log('Slides per view:', this.params.slidesPerView);
-                    console.log('Visible slides:', this.slides.length);
-
-                    // Принудительное обновление
-                    this.update();
-                    this.slideTo(0, 0);
-                },
-                afterInit: function () {
-                    debugDOM();
                 }
             }
         });
 
-        // Принудительно обновляем размеры
+        // Принудительно обновляем Swiper после инициализации
         setTimeout(() => {
             if (window.teachersSwiper) {
                 window.teachersSwiper.update();
                 window.teachersSwiper.updateSlides();
-                window.teachersSwiper.updateSize();
             }
         }, 100);
-
-        return window.teachersSwiper;
     };
 
     // Обновление контейнера с карточками
@@ -228,20 +161,16 @@ const teacher_profile_slider = async () => {
             return;
         }
 
-        // Проверяем структуру HTML
-        console.log('HTML структура:');
-        console.log('- .teacher-cards:', teachersCard);
-        console.log('- Родитель .teacher-cards:', teachersCard.parentElement);
-        console.log('- Дети .teacher-cards:', teachersCard.children.length);
-
         // Очищаем контейнер
         teachersCard.innerHTML = '';
 
         // Если учителей нет, показываем сообщение
         if (!teachers || teachers.size === 0) {
             teachersCard.innerHTML = `
-                <div class="no-teachers-message swiper-slide">
-                    <p>Не найдено других учителей с такими же предметами</p>
+                <div class="teacher_sad">
+                    <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель" 
+                         onerror="console.error('Не удалось загрузить изображение')">
+                    <div class="teacher_sad_text">Не найдено других учителей с такими же предметами</div>
                 </div>
             `;
             return;
@@ -262,7 +191,6 @@ const teacher_profile_slider = async () => {
         const teacherData = await teacherResponse.json();
 
         const subjects = teacherData.subjects || [];
-        console.log('Предметы выбранного учителя:', subjects);
 
         // Получаем всех учителей
         const allTeachersResponse = await fetch(`${BASE_URL}/api.php?action=teachers`);
@@ -288,25 +216,24 @@ const teacher_profile_slider = async () => {
         });
 
         console.log('Найдено учителей:', filteredTeachers.size);
-        console.log('Учители:', Array.from(filteredTeachers));
 
         // Обновляем UI
         updateTeachersContainer(filteredTeachers);
 
-        // Ждем, пока DOM обновится
-        await new Promise(resolve => setTimeout(resolve, 50));
+        // Инициализируем Swiper после добавления карточек
+        setTimeout(() => {
+            initSwiper();
 
-        // Инициализируем Swiper
-        const swiper = initSwiper();
-
-        // Если слайдер создан, принудительно обновляем его
-        if (swiper) {
-            setTimeout(() => {
-                swiper.update();
-                swiper.updateSlides();
-                swiper.slideTo(0, 0);
-            }, 200);
-        }
+            // Дополнительная центровка для малого количества слайдов
+            if (filteredTeachers.size <= 1) {
+                const wrapper = document.querySelector('.swiper-wrapper');
+                if (wrapper) {
+                    wrapper.style.display = 'flex';
+                    wrapper.style.justifyContent = 'center';
+                    wrapper.style.alignItems = 'center';
+                }
+            }
+        }, 150);
 
     } catch (error) {
         console.error('Ошибка в teacher_profile_slider:', error);
@@ -315,15 +242,17 @@ const teacher_profile_slider = async () => {
         const teachersCard = document.querySelector('.teacher-cards');
         if (teachersCard) {
             teachersCard.innerHTML = `
-                <div class="error-message swiper-slide">
-                    <p>Ошибка загрузки данных. Пожалуйста, попробуйте позже.</p>
+                <div class="teacher_sad">
+                    <img src="./src/img/uploads/teacher_not_found.png" alt="грустный учитель"
+                         onerror="console.error('Не удалось загрузить изображение')">
+                    <div class="teacher_sad_text">Временно недоступно. Пожалуйста, попробуйте позже.</div>
                 </div>
             `;
         }
     }
 };
 
-// Запускаем функцию после полной загрузки страницы
+// Запускаем функцию при полной загрузке страницы
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', teacher_profile_slider);
 } else {
