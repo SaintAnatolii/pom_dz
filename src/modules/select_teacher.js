@@ -501,7 +501,9 @@ const createTeacherCard = (teacher) => {
             </div>
             <div class="teacher_info">
                 <div class="teacher_content">
-                    <div class="teacher_name">${full_name}</div>
+                    <a href="/teacher_profile.html?teacherId=${id}" style="text-decoration: none; color: black;">
+                        <div class="teacher_name">${full_name}</div>
+                    </a>
                     <div class="teacher_univercity">Образование: ${education}</div>
                     <div class="teacher_exp">Опыт: ${experience} лет</div>
                     ${createSubjectsText(subjects)}

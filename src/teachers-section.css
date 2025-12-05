@@ -63,6 +63,7 @@
 .language-badge {
     width: 48px;
     height: 48px;
+    margin: 0 -5px;
 }
 
 .teacher-photo {

@@ -94,14 +94,29 @@ const createIcons = (subjects) => {
     const languageBadges = document.createElement('div')
     languageBadges.className = 'language-badges'
 
-    subjects.forEach((subject) => {
-        if (allSubjectsIcons[subject]) {
-            const iconPath = getCorrectUrl(`./src/img/classes/${allSubjectsIcons[subject]}`);
+    // Получаем предмет из data-атрибута при каждом вызове функции
+    const dataSubjectElement = document.getElementById('data-subject')
+    const dataSubject = dataSubjectElement ? dataSubjectElement.dataset.subject : null
+
+    // Если есть data-subject, показываем только иконку этого предмета
+    if (dataSubject && dataSubject.trim() !== '') {
+        if (allSubjectsIcons[dataSubject]) {
+            const iconPath = getCorrectUrl(`./src/img/classes/${allSubjectsIcons[dataSubject]}`);
             languageBadges.insertAdjacentHTML('beforeend',
-                `<img class="language-badge" src="${iconPath}" alt="${subject}">`
+                `<img class="language-badge" src="${iconPath}" alt="${dataSubject}">`
             )
         }
-    })
+    } else {
+        // Иначе показываем все предметы учителя
+        subjects.forEach((subject) => {
+            if (allSubjectsIcons[subject]) {
+                const iconPath = getCorrectUrl(`./src/img/classes/${allSubjectsIcons[subject]}`);
+                languageBadges.insertAdjacentHTML('beforeend',
+                    `<img class="language-badge" src="${iconPath}" alt="${subject}">`
+                )
+            }
+        })
+    }
 
     return languageBadges.outerHTML
 }
