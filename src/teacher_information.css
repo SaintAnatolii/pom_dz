@@ -308,6 +308,7 @@
     .teacher_info_right {
         width: 100%;
         padding: 20px 40px;
+        min-height: 140px;
     }
 
     .teacher_info_left {
@@ -343,7 +344,7 @@
 
 @media screen and (max-width: 600px) {
     .teacher_info_left {
-        height: 150px;
+        height: 200px;
         padding: 20px 35px;
     }
 
@@ -372,7 +373,7 @@
 
 @media screen and (max-width: 480px) {
     .teacher_info_left {
-        height: 150px;
+        height: 200px;
         padding: 10px 30px;
     }
 
@@ -388,7 +389,7 @@
 
 @media screen and (max-width: 375px) {
     .teacher_info_left {
-        height: 140px;
+        height: 220px;
     }
 
     .teacher_info_right {
