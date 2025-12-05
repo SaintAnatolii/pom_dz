@@ -24,6 +24,8 @@ const directions = () => {
             setTimeout(() => {
                 image.src = `src/img/classes/${el.dataset.image}.svg`
                 title.src = `src/img/classes/${el.dataset.logo}.svg`
+                descr.textContent = el.dataset.description
+                age.textContent = el.dataset.age
                 mathHighlight.style.backgroundColor = `${el.dataset.color}`
                 btn.href = `${el.dataset.url}`
             }, 250)
