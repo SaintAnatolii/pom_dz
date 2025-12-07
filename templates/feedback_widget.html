@@ -1,0 +1,618 @@
+<!-- Виджет отзывов - добавляется перед закрывающим тегом </body> -->
+<div class="review-widget">
+    <!-- Кнопка открытия формы -->
+    <button class="review-widget-toggle" id="reviewWidgetToggle">
+        <i class="review-icon">✏️</i>
+        <span class="review-text">Оставить отзыв</span>
+    </button>
+
+    <!-- Модальное окно формы -->
+    <div class="review-modal" id="reviewModal">
+        <div class="review-modal-content">
+            <div class="review-modal-header">
+                <h3 class="review-modal-title">Оставить отзыв о преподавателе</h3>
+                <button class="review-modal-close" id="reviewModalClose">&times;</button>
+            </div>
+
+            <form class="review-form" id="reviewForm">
+                <!-- Скрытые поля -->
+                <input type="hidden" id="teacherId" name="teacher_id" value="">
+                <input type="hidden" id="teacherName" name="teacher_name" value="">
+
+                <!-- Оценка -->
+                <div class="form-group">
+                    <label class="form-label">Ваша оценка:</label>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="Отлично">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="Хорошо">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="Удовлетворительно">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="Плохо">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="Очень плохо">★</label>
+                    </div>
+                </div>
+
+                <!-- Имя -->
+                <div class="form-group">
+                    <label for="reviewerName" class="form-label">Ваше имя *</label>
+                    <input type="text" id="reviewerName" name="reviewer_name" class="form-input"
+                        placeholder="Например: Анна или Мама Анны" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="reviewerEmail" class="form-label">Ваш email *</label>
+                    <input type="email" id="reviewerEmail" name="reviewer_email" class="form-input"
+                        placeholder="email@example.com" required>
+                </div>
+
+                <!-- Текст отзыва -->
+                <div class="form-group">
+                    <label for="reviewText" class="form-label">Текст отзыва *</label>
+                    <textarea id="reviewText" name="review_text" class="form-textarea"
+                        placeholder="Поделитесь вашим впечатлением о занятиях..." rows="5" required></textarea>
+                </div>
+
+                <!-- Дополнительные поля -->
+                <div class="form-group">
+                    <label for="childName" class="form-label">Имя ученика (необязательно)</label>
+                    <input type="text" id="childName" name="child_name" class="form-input"
+                        placeholder="Имя ребенка, который занимается">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Предмет (необязательно)</label>
+                    <input type="text" id="subject" name="subject" class="form-input"
+                        placeholder="Математика, английский и т.д.">
+                </div>
+
+                <!-- Чекбокс согласия -->
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacyAgreement" name="privacy_agreement" class="form-checkbox"
+                        required>
+                    <label for="privacyAgreement" class="checkbox-label">
+                        Я согласен(на) на обработку персональных данных и публикацию отзыва на сайте
+                    </label>
+                </div>
+
+                <!-- Кнопки -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button" id="submitReview">
+                        Отправить отзыв
+                    </button>
+                    <button type="button" class="cancel-button" id="cancelReview">
+                        Отмена
+                    </button>
+                </div>
+
+                <!-- Сообщения об успехе/ошибке -->
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Стили виджета отзывов */
+    .review-widget {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Кнопка виджета */
+    .review-widget-toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 25px;
+        background: linear-gradient(135deg, #4361ee, #3a56d4);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    .review-widget-toggle:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        background: linear-gradient(135deg, #3a56d4, #2f46b9);
+    }
+
+    .review-icon {
+        font-size: 20px;
+    }
+
+    .review-text {
+        white-space: nowrap;
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+        }
+
+        50% {
+            box-shadow: 0 6px 25px rgba(67, 97, 238, 0.5);
+        }
+
+        100% {
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+        }
+    }
+
+    /* Модальное окно */
+    .review-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .review-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        animation: slideUp 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    /* Заголовок модального окна */
+    .review-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 25px;
+        background: linear-gradient(135deg, #4361ee, #3a56d4);
+        color: white;
+    }
+
+    .review-modal-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .review-modal-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease;
+    }
+
+    .review-modal-close:hover {
+        transform: scale(1.1);
+    }
+
+    /* Форма */
+    .review-form {
+        padding: 25px;
+        overflow-y: auto;
+        max-height: calc(90vh - 80px);
+    }
+
+    /* Элементы формы */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-color: #4361ee;
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+    }
+
+    .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Звезды рейтинга */
+    .rating-stars {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+
+    .rating-stars input[type="radio"] {
+        display: none;
+    }
+
+    .rating-stars label {
+        font-size: 32px;
+        color: #ddd;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    .rating-stars input[type="radio"]:checked~label,
+    .rating-stars label:hover,
+    .rating-stars label:hover~label {
+        color: #ffc107;
+    }
+
+    .rating-stars input[type="radio"]:checked+label {
+        color: #ffc107;
+    }
+
+    /* Чекбокс */
+    .checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .form-checkbox {
+        margin-top: 5px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-label {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    .checkbox-label a {
+        color: #4361ee;
+        text-decoration: none;
+    }
+
+    .checkbox-label a:hover {
+        text-decoration: underline;
+    }
+
+    /* Кнопки формы */
+    .form-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .submit-button,
+    .cancel-button {
+        flex: 1;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .submit-button {
+        background: linear-gradient(135deg, #4361ee, #3a56d4);
+        color: white;
+    }
+
+    .submit-button:hover:not(:disabled) {
+        background: linear-gradient(135deg, #3a56d4, #2f46b9);
+        transform: translateY(-2px);
+    }
+
+    .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .cancel-button {
+        background: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .cancel-button:hover {
+        background: #e9ecef;
+        color: #333;
+    }
+
+    /* Сообщения формы */
+    .form-message {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        display: none;
+    }
+
+    .form-message.success {
+        display: block;
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-message.error {
+        display: block;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .review-widget {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .review-widget-toggle {
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+
+        .review-text {
+            display: none;
+        }
+
+        .review-modal-content {
+            width: 95%;
+            max-height: 95vh;
+        }
+
+        .review-modal-header {
+            padding: 15px 20px;
+        }
+
+        .review-modal-title {
+            font-size: 18px;
+        }
+
+        .review-form {
+            padding: 20px;
+        }
+
+        .form-buttons {
+            flex-direction: column;
+        }
+
+        .rating-stars label {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .review-widget {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .review-widget-toggle {
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+        }
+
+        .review-icon {
+            font-size: 22px;
+        }
+    }
+</style>
+
+<script>
+    // Инициализация виджета
+    document.addEventListener('DOMContentLoaded', function () {
+        // Получаем элементы
+        const widgetToggle = document.getElementById('reviewWidgetToggle');
+        const modal = document.getElementById('reviewModal');
+        const modalClose = document.getElementById('reviewModalClose');
+        const cancelBtn = document.getElementById('cancelReview');
+        const reviewForm = document.getElementById('reviewForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitReview');
+
+        // ID учителя из URL или другого источника
+        // Пример: https://pomogatordz.ru/teacher.html?id=123
+        function getTeacherIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || 'default_teacher_id';
+        }
+
+        function getTeacherNameFromPage() {
+            // Получаем имя учителя со страницы
+            const teacherNameElement = document.querySelector('.teacher_fullname') ||
+                document.querySelector('.teacher-name') ||
+                document.querySelector('h1');
+            return teacherNameElement ? teacherNameElement.textContent.trim() : 'Преподаватель';
+        }
+
+        // Устанавливаем данные учителя в скрытые поля
+        document.getElementById('teacherId').value = getTeacherIdFromUrl();
+        document.getElementById('teacherName').value = getTeacherNameFromPage();
+
+        // Открытие модального окна
+        widgetToggle.addEventListener('click', function () {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        });
+
+        // Закрытие модального окна
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Закрытие по клику на фон
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        // Обработка отправки формы
+        reviewForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            // Блокируем кнопку отправки
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            // Собираем данные формы
+            const formData = new FormData(reviewForm);
+            const data = Object.fromEntries(formData.entries());
+
+            // Валидация
+            if (!data.rating) {
+                showMessage('Пожалуйста, поставьте оценку', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить отзыв';
+                return;
+            }
+
+            try {
+                // Отправка на PHP API
+                const response = await fetch('/api/add-review.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Успешная отправка
+                    showMessage('Спасибо! Ваш отзыв отправлен на модерацию.', 'success');
+                    setTimeout(() => {
+                        closeModal();
+                        reviewForm.reset();
+                        // Сбрасываем звезды
+                        document.querySelectorAll('input[name="rating"]').forEach(radio => {
+                            radio.checked = false;
+                        });
+                    }, 2000);
+                } else {
+                    // Ошибка сервера
+                    showMessage(result.message || 'Произошла ошибка при отправке отзыва', 'error');
+                }
+            } catch (error) {
+                // Ошибка сети
+                showMessage('Ошибка соединения. Попробуйте позже.', 'error');
+                console.error('Ошибка отправки отзыва:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить отзыв';
+            }
+        });
+
+        // Функция показа сообщений
+        function showMessage(text, type) {
+            formMessage.textContent = text;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+
+            // Автоматическое скрытие через 5 секунд
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Анимация кнопки при прокрутке
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Прокрутка вниз
+                widgetToggle.style.transform = 'translateY(100px)';
+                widgetToggle.style.opacity = '0';
+            } else {
+                // Прокрутка вверх
+                widgetToggle.style.transform = 'translateY(0)';
+                widgetToggle.style.opacity = '1';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
+</script>
