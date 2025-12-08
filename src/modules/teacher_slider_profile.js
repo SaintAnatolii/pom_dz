@@ -88,7 +88,7 @@ const teacher_profile_slider = async () => {
                 </div>
                 <h2 class="teacher-name">${full_name}</h2>
                 <p class="teacher-languages">${subjectsText}</p>
-                <a href="/teacher_profile.html?teacherId=${id}" class="profile-btn" 
+                <a href="./teacher_profile.html?teacherId=${id}" class="profile-btn" 
                    style="background-color: var(--main_color_page);">В профиль</a>
             </div>
         `;
