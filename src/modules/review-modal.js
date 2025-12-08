@@ -1,6 +1,7 @@
 (function () {
   'use strict';
   const BASE_URL = 'http://saintdevor.temp.swtest.ru'
+  // const BASE_URL = 'http://pomogator-cms'
   // Конфигурация - ИЗМЕНЕНО ДЛЯ ВАШЕГО API
   const CONFIG = {
     modalBackground: 'rgba(77, 37, 235, 1)',
@@ -815,6 +816,7 @@
       try {
         // Используем тот же BASE_URL что и в teacherProfile
         const BASE_URL = 'http://saintdevor.temp.swtest.ru';
+        // const BASE_URL = 'http://pomogator-cms'
 
         const response = await fetch(`${BASE_URL}/api.php?action=teachers&id=${teacherId}`);
 
@@ -1102,7 +1104,7 @@
 
       try {
         // Определяем BASE_URL
-        const BASE_URL = window.BASE_URL || window.location.origin;
+        // const BASE_URL = window.BASE_URL || window.location.origin;
         // ИСПРАВЛЕН endpoint
         const apiUrl = `${BASE_URL}/api.php?action=reviews`;
 
@@ -1135,7 +1137,7 @@
           }, 3000);
 
           // Отправляем событие об успешной отправке отзыва
-          this.dispatchReviewSubmittedEvent(reviewData);
+          // this.dispatchReviewSubmittedEvent(reviewData);
 
         } else {
           // Обработка ошибок от API
@@ -1179,18 +1181,18 @@
     }
 
     // Отправка события о добавлении отзыва
-    dispatchReviewSubmittedEvent(formData) {
-      const event = new CustomEvent('reviewSubmitted', {
-        detail: {
-          teacherId: formData.get('teacher_id'),
-          teacherName: formData.get('teacher_name'),
-          rating: formData.get('rating'),
-          reviewerName: formData.get('reviewer_name'),
-          timestamp: new Date().toISOString()
-        }
-      });
-      document.dispatchEvent(event);
-    }
+    // dispatchReviewSubmittedEvent(reviewData) {
+    //   const event = new CustomEvent('reviewSubmitted', {
+    //     detail: {
+    //       teacherId: reviewData.teacher_id || reviewData.teacherId,
+    //       teacherName: this.teacherNameInput.value,
+    //       rating: reviewData.rating,
+    //       reviewerName: reviewData.user_name,
+    //       timestamp: new Date().toISOString()
+    //     }
+    //   });
+    //   document.dispatchEvent(event);
+    // }
   }
 
   // Инициализация при загрузке страницы

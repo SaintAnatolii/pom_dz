@@ -134,6 +134,7 @@ const teacherProfile = () => {
     }
 
     const BASE_URL = 'http://saintdevor.temp.swtest.ru';
+    // const BASE_URL = 'http://pomogator-cms';
 
     const getData = async (url) => {
         try {

@@ -9,6 +9,7 @@ const getData = (url) => {
 }
 
 const BASE_URL = 'http://saintdevor.temp.swtest.ru/';
+// const BASE_URL = 'http://pomogator-cms/';
 
 const allSubjects = [
     'Подготовка к школе', 'Начальная школа', 'Русский язык', 'Литература',
