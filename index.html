@@ -2,9 +2,17 @@
 <html lang="ru">
 
 <head>
-  <!-- Кодировка и базовые настройки -->
+  <!-- Основные мета-теги -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Безопасность и мобильная оптимизация -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- SEO мета-теги -->
   <title>Помогатор ДЗ - Онлайн репетиторы для школьников 1-11 классов | Помощь с домашними заданиями</title>
@@ -13,12 +21,14 @@
   <meta name="keywords"
     content="помощь с домашними заданиями, репетитор онлайн, подготовка к ЕГЭ, подготовка к ОГЭ, выполнение ДЗ, школьные предметы, начальная школа, репетиторы по математике, репетитор по русскому, онлайн занятия для школьников, домашнее задание на заказ, учитель онлайн, дополнительные занятия, подтянуть учебу, улучшить оценки, репетиторство">
 
-  <!-- Robots и дополнительные мета-теги -->
+  <!-- Robots и авторство -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="Помогатор ДЗ">
-  <meta name="copyright" content="Помогатор ДЗ">
+  <meta name="copyright" content="© 2024 Помогатор ДЗ. Все права защищены.">
   <meta name="theme-color" content="#4d25eb">
   <meta name="msapplication-TileColor" content="#4d25eb">
+  <meta name="application-name" content="Помогатор ДЗ">
+  <meta name="apple-mobile-web-app-title" content="Помогатор ДЗ">
 
   <!-- Канонический URL -->
   <link rel="canonical" href="https://pomogatordz.ru/">
@@ -27,7 +37,7 @@
   <link rel="alternate" hreflang="ru" href="https://pomogatordz.ru/">
   <link rel="alternate" hreflang="x-default" href="https://pomogatordz.ru/">
 
-  <!-- Open Graph мета-теги -->
+  <!-- Open Graph для соцсетей -->
   <meta property="og:title" content="Помогатор ДЗ - Онлайн репетиторы для школьников 1-11 классов">
   <meta property="og:description"
     content="✅ Профессиональные репетиторы по 15+ предметам. Подготовка к ЕГЭ, ОГЭ. 95% учеников улучшают оценки. Первый урок бесплатно!">
@@ -39,6 +49,7 @@
   <meta property="og:image:alt" content="Помогатор ДЗ - онлайн репетиторы для школьников">
   <meta property="og:site_name" content="Помогатор ДЗ">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="ru_RU">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -46,6 +57,71 @@
   <meta name="twitter:description"
     content="Профессиональные репетиторы по 15+ предметам. Подготовка к ЕГЭ, ОГЭ. Первый урок бесплатно!">
   <meta name="twitter:image" content="https://pomogatordz.ru/src/img/twitter-main.jpg">
+  <meta name="twitter:site" content="@pomogatordz">
+  <meta name="twitter:creator" content="@pomogatordz">
+
+  <!-- Предварительное подключение к внешним ресурсам -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://mc.yandex.ru">
+  <link rel="dns-prefetch" href="https://mc.yandex.ru">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  <!-- Предзагрузка критических ресурсов -->
+  <link rel="preload" href="/src/style.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" as="script"
+    crossorigin="anonymous">
+  <link rel="preload" href="/src/img/hero-banner.jpg" as="image" media="(min-width: 768px)" type="image/jpeg">
+  <link rel="preload" href="/src/img/hero-banner-mobile.jpg" as="image" media="(max-width: 767px)" type="image/jpeg">
+  <link rel="preload" href="/src/modules/menu.js" as="script" crossorigin="anonymous">
+
+  <!-- Фавиконы для всех платформ -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4d25eb">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="msapplication-TileColor" content="#4d25eb">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#4d25eb">
+  <meta name="msapplication-navbutton-color" content="#4d25eb">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#4d25eb">
+
+  <!-- Подключение внешних библиотек CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+  <!-- Подключение собственных CSS файлов -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/header-menu.css">
+  <link rel="stylesheet" href="/src/hero.css">
+  <link rel="stylesheet" href="/src/achievements.css">
+  <link rel="stylesheet" href="/src/search.css">
+  <link rel="stylesheet" href="/src/find.css">
+  <link rel="stylesheet" href="/src/footer.css">
+  <link rel="stylesheet" href="/src/hero-section.css">
+  <link rel="stylesheet" href="/src/directions-section.css">
+  <link rel="stylesheet" href="/src/vector.css">
+  <link rel="stylesheet" href="/src/contact-section.css">
+  <link rel="stylesheet" href="/src/faq-section.css">
+  <link rel="stylesheet" href="/src/reviews-section.css">
+  <link rel="stylesheet" href="/src/teachers-section.css">
+  <link rel="stylesheet" href="/src/learning-methods.css">
+  <link rel="stylesheet" href="/src/linguistic.css">
+  <link rel="stylesheet" href="/src/hobbye.css">
+  <link rel="stylesheet" href="/src/issub.css">
 
   <!-- Структурированные данные (JSON-LD) -->
   <script type="application/ld+json">
@@ -59,7 +135,7 @@
         "description": "Онлайн сервис помощи с домашними заданиями и репетиторства для школьников 1-11 классов",
         "url": "https://pomogatordz.ru/",
         "logo": "https://pomogatordz.ru/src/img/nav/LogoPomogator.png",
-        "telephone": "+7-958-111-68-55",
+        "telephone": "+7 958 111 68 55",
         "email": "da@pomogatordz.ru",
         "address": {
           "@type": "PostalAddress",
@@ -91,7 +167,8 @@
           "@type": "SearchAction",
           "target": "https://pomogatordz.ru/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
-        }
+        },
+        "inLanguage": "ru-RU"
       },
       {
         "@type": "Service",
@@ -157,7 +234,7 @@
         "name": "Как проходит первый бесплатный урок?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Первый урок длится 30 минут, на нем репетитор оценивает уровень знаний ученика и составляет индивидуальный план занятий."
+          "text": "Первый урок длится 30 минут, на нем репетитор оценивает уровень знаний ученика и составляет индивидуальный план занятий. Это знакомство и диагностика совершенно бесплатно."
         }
       },
       {
@@ -165,94 +242,178 @@
         "name": "По каким предметам доступна помощь?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Мы помогаем по 15+ предметам: математика, русский язык, физика, химия, английский язык, история, биология, география и другим."
+          "text": "Мы помогаем по 15+ предметам: математика, русский язык, физика, химия, английский язык, история, биология, география, обществознание, информатика, литература и другим школьным дисциплинам."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько стоит занятие с репетитором?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Стоимость зависит от предмета, класса и опыта репетитора. Средняя цена от 600 до 1500 рублей за 60 минут. Первый пробный урок всегда бесплатный."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как выбрать подходящего репетитора?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Наши специалисты помогут подобрать репетитора исходя из уровня ученика, целей обучения и пожеланий родителей. Вы можете посмотреть анкеты преподавателей и их рейтинги."
         }
       }
     ]
   }
   </script>
 
-  <!-- Фавиконы и иконки -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4361ee">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Встроенные критические стили для ускорения загрузки -->
+  <style>
+    :root {
+      --main_color_page: #4d25eb;
+      --secondary_color: #6c63ff;
+      --accent_color: #ff6584;
+      --text_primary: #333333;
+      --text_secondary: #666666;
+      --background_light: #f8f9fa;
+      --background_white: #ffffff;
+      --border_color: #e0e0e0;
+      --success_color: #28a745;
+      --warning_color: #ffc107;
+      --error_color: #dc3545;
+    }
 
-  <!-- Предзагрузка критических ресурсов -->
-  <link rel="preload" href="src/style.css" as="style">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" as="style">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" as="script">
-  <link rel="preload" href="src/img/hero-banner.jpg" as="image" media="(min-width: 768px)">
-  <link rel="preload" href="src/img/hero-banner-mobile.jpg" as="image" media="(max-width: 767px)">
+    /* Минимальные критические стили для предотвращения FOUC */
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Подключение стилей -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
-  <!-- CSS modules -->
-  <link rel="stylesheet" href="src/style.css">
-  <link rel="stylesheet" href="src/header-menu.css">
-  <link rel="stylesheet" href="src/hero.css">
-  <link rel="stylesheet" href="src/achievements.css">
-  <link rel="stylesheet" href="src/search.css">
-  <link rel="stylesheet" href="src/find.css">
-  <link rel="stylesheet" href="src/footer.css">
-  <link rel="stylesheet" href="src/hero-section.css">
-  <link rel="stylesheet" href="src/directions-section.css">
-  <link rel="stylesheet" href="src/vector.css">
-  <link rel="stylesheet" href="src/contact-section.css">
-  <link rel="stylesheet" href="src/faq-section.css">
-  <link rel="stylesheet" href="src/reviews-section.css">
-  <link rel="stylesheet" href="src/teachers-section.css">
-  <link rel="stylesheet" href="src/learning-methods.css">
-  <link rel="stylesheet" href="src/linguistic.css">
-  <link rel="stylesheet" href="src/hobbye.css">
-  <link rel="stylesheet" href="src/issub.css">
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--background_white);
+      color: var(--text_primary);
+      overflow-x: hidden;
+    }
 
-  <!-- Подключение скриптов -->
+    /* Индикатор загрузки */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--main_color_page) 0%, var(--secondary_color) 100%);
+      z-index: 9999;
+      transform: translateX(-100%);
+      animation: loading 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* Скрытие элементов до загрузки стилей */
+    [data-loading] {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .loaded [data-loading] {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- Подключение внешних скриптов -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
-  <!-- JS modules -->
-  <script type="module" src="src/modules/accordion.js" defer></script>
-  <script type="module" src="src/modules/directions.js" defer></script>
-  <script type="module" src="src/modules/vector.js" defer></script>
-  <script type="module" src="src/modules/menu.js" defer></script>
-  <script type="module" src="src/modules/tabs.js" defer></script>
-  <script type="module" src="src/modules/find.js" defer></script>
-  <script type="module" src="src/modules/reviews.js" defer></script>
-  <script type="module" src="src/modules/teacher_slider.js" defer></script>
-  <script type="module" src="src/modules/form-handler.js" defer></script>
 
-  <!-- Yandex.Metrika counter -->
-  <!-- <script type="text/javascript">
+  <!-- Подключение собственных JavaScript модулей -->
+  <script type="module" src="/src/modules/accordion.js" defer></script>
+  <script type="module" src="/src/modules/directions.js" defer></script>
+  <script type="module" src="/src/modules/vector.js" defer></script>
+  <script type="module" src="/src/modules/menu.js" defer></script>
+  <script type="module" src="/src/modules/tabs.js" defer></script>
+  <script type="module" src="/src/modules/find.js" defer></script>
+  <script type="module" src="/src/modules/reviews.js" defer></script>
+  <script type="module" src="/src/modules/teacher_slider.js" defer></script>
+  <script type="module" src="/src/modules/form-handler.js" defer></script>
+
+  <!-- Yandex.Metrika counter (закомментирован, раскомментируйте и добавьте свой ID) -->
+  <!--
+  <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();
     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(XXXXXX, "init", {
+    ym(00000000, "init", {
       clickmap:true,
       trackLinks:true,
       accurateTrackBounce:true,
-      webvisor:true
+      webvisor:true,
+      ecommerce:"dataLayer"
     });
-  </script> -->
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  -->
 
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <!-- Google Analytics (закомментирован, раскомментируйте и добавьте свой ID) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-  </script> -->
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 
-  <!-- CSS переменные для цветов -->
-  <style>
-    :root {
-      --main_color_page: #4d25eb;
-    }
-  </style>
+  <!-- Скрипт для управления состоянием загрузки -->
+  <script>
+    // Управление состоянием загрузки страницы
+    document.addEventListener('DOMContentLoaded', function () {
+      // Добавляем класс loaded после полной загрузки
+      window.addEventListener('load', function () {
+        document.body.classList.add('loaded');
+        // Убираем индикатор загрузки
+        const loader = document.querySelector('.page-loader');
+        if (loader) {
+          loader.style.display = 'none';
+        }
+      });
 
+      // Создаем индикатор загрузки если его нет
+      if (!document.querySelector('.page-loader')) {
+        const loader = document.createElement('div');
+        loader.className = 'page-loader';
+        document.body.appendChild(loader);
+      }
+
+      // Предотвращение отправки пустых форм
+      document.addEventListener('submit', function (e) {
+        if (e.target.tagName === 'FORM') {
+          const submitBtn = e.target.querySelector('[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Отправка...';
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = 'Отправить';
+            }, 3000);
+          }
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
