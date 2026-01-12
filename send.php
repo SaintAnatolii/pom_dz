@@ -382,7 +382,7 @@ try {
     $mail->setFrom('psnsaint@mail.ru', 'Администратор сайта'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('saint_dev_order@mail.ru');  
+    $mail->addAddress('da@pomogatordz.ru');  
     
     // Отправка сообщения
     $mail->isHTML(true);

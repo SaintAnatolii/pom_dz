@@ -181,7 +181,7 @@ const createTeacherCard = (teacher) => {
             </div>
             <div class="teacher_info">
                 <div class="teacher_content">
-                    <a href="/teacher_profile.html?teacherId=${id}" style="text-decoration: none; color: black;">
+                    <a href="./teacher_profile.html?teacherId=${id}" style="text-decoration: none; color: black;">
                         <div class="teacher_name">${full_name}</div>
                     </a>
                     <div class="teacher_univercity">Образование: ${education}</div>
@@ -228,7 +228,7 @@ const renderTeachers = (teachers) => {
     if (teachers.length === 0) {
         teachersContainer.innerHTML = `
             <div class="no-teachers">
-                <p>Преподаватели по выбранной категории не найдены</p>
+                <p style="text-align: center;">Преподаватели по выбранной категории не найдены</p>
             </div>
         `;
         return;
@@ -311,7 +311,7 @@ const initTeachersSection = async () => {
         if (teachersContainer) {
             teachersContainer.innerHTML = `
                 <div class="error-message">
-                    <p>Ошибка загрузки данных. Пожалуйста, попробуйте позже.</p>
+                    <p style="text-align: center;">Ошибка загрузки данных. Пожалуйста, попробуйте позже.</p>
                 </div>
             `;
         }
