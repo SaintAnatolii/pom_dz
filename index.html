@@ -2248,6 +2248,24 @@
 
   </footer>
 
+  <script>
+    (function () {
+      const header = document.querySelector('header');
+      function updateHeaderHeight() {
+        if (!header) return;
+        const h = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', h + 'px');
+        document.body.style.paddingTop = h + 'px';
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateHeaderHeight);
+      } else {
+        updateHeaderHeight();
+      }
+      window.addEventListener('resize', updateHeaderHeight);
+      window.addEventListener('orientationchange', updateHeaderHeight);
+    })();
+  </script>
 
   <script>
     // Глобальная обработка ошибок загрузки изображений

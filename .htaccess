@@ -1,0 +1,13 @@
+# Включение модуля прокси
+<IfModule mod_proxy.c>
+    ProxyRequests Off
+    ProxyPreserveHost On
+    
+    # Проксирование API запросов
+    ProxyPass /api/saintdevor http://saintdevor.temp.swtest.ru/api.php
+    ProxyPassReverse /api/saintdevor http://saintdevor.temp.swtest.ru/api.php
+</IfModule>
+
+# Или редирект для статики
+RewriteEngine On
+RewriteRule ^api/(.*)$ http://saintdevor.temp.swtest.ru/api.php?action=$1 [P,L]
